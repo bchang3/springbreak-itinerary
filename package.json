@@ -6,15 +6,26 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "format": "prettier --write \"src/**/*.{ts,tsx}\"",
     "lint": "eslint"
   },
   "dependencies": {
+    "@iconify/react": "^6.0.2",
+    "clsx": "^2.1.1",
+    "leaflet": "^1.9.4",
+    "leaflet-defaulticon-compatibility": "^0.1.2",
     "next": "16.1.0",
-    "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "prettier": "^3.7.4",
+    "react": "^19.0.0-rc.1",
+    "react-dom": "^19.0.0-rc.1",
+    "react-leaflet": "^5.0.0",
+    "tailwind-merge": "^3.4.0"
   },
   "devDependencies": {
+    "@iconify-icons/lucide": "^1.2.135",
+    "@iconify-json/lucide": "^1.2.81",
     "@tailwindcss/postcss": "^4",
+    "@types/leaflet": "^1.9.21",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
