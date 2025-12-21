@@ -13,13 +13,13 @@ export default function EventCard({ cityEvent }: EventCardProps) {
 
   return (
     <div
-      className="h-80 min-w-70 cursor-pointer perspective"
+      className="h-80 min-w-70 cursor-pointer perspective hover:scale-103 transition-all"
       onClick={() => setIsFlipped((prev) => !prev)}
     >
       <motion.div
         className="relative w-full h-full"
-        animate={{ rotateY: isFlipped ? 180 : 0 }}
-        transition={{ duration: 0.15, ease: "linear" }}
+        animate={{ rotateY: isFlipped ? -180 : 0 }}
+        transition={{ duration: 0.25, ease: "easeInOut" }}
         style={{ transformStyle: "preserve-3d" }}
       >
         <div className="absolute inset-0 backface-hidden flex flex-col py-6 px-4 rounded-md border border-gray-200 gap-4 shadow-md">
