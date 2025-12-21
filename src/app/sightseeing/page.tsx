@@ -8,14 +8,14 @@ export default function SightSeeing() {
     .flat();
   return (
     <div className="flex flex-col h-full">
-      <div className="w-full h-[70vh] overflow-hidden">
+      <div className="w-full h-[70vh] min-h-[45vh] overflow-hidden">
         <img
           src="/pictures/sightseeing.jpg"
           className="w-full h-full object-cover"
           alt="Sight seeing"
         />
       </div>
-      <div className="grid grid-cols-5 gap-12 h-full p-6">
+      <div className="grid grid-cols-5 gap-12 h-fit p-6">
         {events.map((ev) => (
           <EventCard key={ev.title} cityEvent={ev} />
         ))}
