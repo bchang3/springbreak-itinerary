@@ -13,6 +13,7 @@ import {
 import { Icon } from "@iconify/react";
 import globeIcon from "@iconify-icons/lucide/globe";
 import { cities, City } from "../itinerary/plan";
+import EventCardWheel from "./EventCardWheel";
 
 export default function Map() {
   const [selectedCity, setSelectedCity] = useState<City>(cities[0]);
@@ -86,6 +87,7 @@ export default function Map() {
           />
         </div>
         <p className="mt-8 text-base font-medium">{selectedCity.description}</p>
+        <EventCardWheel events={selectedCity.events}/>
       </div>
     </div>
   );

@@ -9,7 +9,7 @@ interface EventCard {
 export default function EventCard({ cityEvent }: EventCard) {
   return (
     <div>
-      <div className="flex flex-col py-6 px-4 rounded-md border-gray-200 border gap-4 hover:bg-gray-200 justify-between hover:scale-103 shadow-md transition-transform duration-300 h-80">
+      <div className="flex flex-col py-6 px-4 rounded-md border-gray-200 border gap-4 hover:bg-gray-200 justify-between hover:scale-103 shadow-md transition-transform duration-300 h-80 min-w-70 ">
         <div className="font-semibold text-black text-xl font-cinzel">
           {cityEvent.title}
         </div>
