@@ -1,26 +1,51 @@
-"useclient";
+"use client";
 
+import { useState } from "react";
+import { motion } from "framer-motion";
 import { CityEvent } from "../itinerary/plan";
 
-interface EventCard {
+interface EventCardProps {
   cityEvent: CityEvent;
 }
 
-export default function EventCard({ cityEvent }: EventCard) {
+export default function EventCard({ cityEvent }: EventCardProps) {
+  const [isFlipped, setIsFlipped] = useState(false);
+
   return (
-    <div>
-      <div className="flex flex-col py-6 px-4 rounded-md border-gray-200 border gap-4 hover:bg-gray-200 justify-between hover:scale-103 shadow-md transition-transform duration-300 h-80 min-w-70 ">
-        <div className="font-semibold text-black text-xl font-cinzel">
-          {cityEvent.title}
+    <div
+      className="h-80 min-w-70 cursor-pointer perspective"
+      onClick={() => setIsFlipped((prev) => !prev)}
+    >
+      <motion.div
+        className="relative w-full h-full"
+        animate={{ rotateY: isFlipped ? 180 : 0 }}
+        transition={{ duration: 0.15, ease: "linear" }}
+        style={{ transformStyle: "preserve-3d" }}
+      >
+        <div className="absolute inset-0 backface-hidden flex flex-col py-6 px-4 rounded-md border border-gray-200 gap-4 shadow-md">
+          <div className="font-semibold text-black text-xl font-cinzel">
+            {cityEvent.title}
+          </div>
+
+          <div className="flex-1 overflow-hidden rounded-sm">
+            <img
+              src={cityEvent.imageLink}
+              alt={cityEvent.title}
+              className="w-full h-full object-cover object-center"
+            />
+          </div>
         </div>
-        <div className="flex flex-col gap-3 w-full h-full overflow-hidden rounded-xs">
-          <img
-            src={cityEvent.imageLink}
-            alt={cityEvent.title}
-            className="w-full h-full object-cover object-center"
-          />
+
+        <div className="absolute inset-0 backface-hidden rotate-y-180 flex flex-col py-6 px-4 rounded-md border border-gray-200 shadow-md bg-gray-100">
+          <div className="font-semibold text-black text-xl font-cinzel mb-2">
+            {cityEvent.title}
+          </div>
+
+          <div className="text-sm text-gray-700 leading-relaxed overflow-auto">
+            {cityEvent.description}
+          </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }
