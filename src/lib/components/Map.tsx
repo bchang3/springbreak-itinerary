@@ -4,7 +4,12 @@ import "leaflet/dist/leaflet.css";
 import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css";
 import "leaflet-defaulticon-compatibility";
 import { useRef, useState } from "react";
-import { basicMarkerIcon, selectedMarkerIcon } from "./MarkerIcons";
+import {
+  basicMarkerIcon,
+  selectedMarkerIcon,
+  selectedTentativeMarkerIcon,
+  tentativeMarkerIcon,
+} from "./MarkerIcons";
 import { Icon } from "@iconify/react";
 import globeIcon from "@iconify-icons/lucide/globe";
 import { cities, City } from "../itinerary/plan";
@@ -38,7 +43,13 @@ export default function Map() {
               key={city.name}
               position={city.coords}
               icon={
-                selectedCity.name == city.name ? selectedMarkerIcon : basicMarkerIcon
+                selectedCity.name == city.name
+                  ? selectedCity.tentative
+                    ? selectedTentativeMarkerIcon
+                    : selectedMarkerIcon
+                  : city.tentative
+                    ? tentativeMarkerIcon
+                    : basicMarkerIcon
               }
               eventHandlers={{
                 click: () => {
@@ -64,7 +75,9 @@ export default function Map() {
         </button>
       </div>
       <div className="flex flex-col gap-2 h-full w-2/5">
-        <h1 className="font-cinzel font-semibold text-3xl">{selectedCity.name}</h1>
+        <h1 className="font-cinzel font-semibold text-3xl">
+          {selectedCity.name}
+        </h1>
         <div className="h-[30vh] self-start w-full">
           <img
             src={`/pictures/cities/${selectedCity.name}.jpg`}
@@ -72,9 +85,7 @@ export default function Map() {
             alt={selectedCity.name}
           />
         </div>
-        <p className="mt-8 text-base font-medium">
-          {selectedCity.description}
-        </p>
+        <p className="mt-8 text-base font-medium">{selectedCity.description}</p>
       </div>
     </div>
   );

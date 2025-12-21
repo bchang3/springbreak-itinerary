@@ -7,12 +7,13 @@ export default function NavBar() {
       <Link href="/" className="text-2xl py-4">
         Spring Break 2026
       </Link>
-      <nav className="flex flex-row w-1/3 items-center justify-between">
+      <nav className="flex flex-row min-w-fit items-center justify-between">
         <NavLink href="/map">Map</NavLink>
-        <NavLink href="/">Food</NavLink>
-        <NavLink href="/">Night Life</NavLink>
-        <NavLink href="/">Nature</NavLink>
-        <NavLink href="/">Activities</NavLink>
+        <NavLink href="/food">Food</NavLink>
+        <NavLink href="/night-life">Night Life</NavLink>
+        <NavLink href="/nature">Nature</NavLink>
+        <NavLink href="/sightseeing">Sight-Seeing</NavLink>
+        <NavLink href="/activities">Activities</NavLink>
       </nav>
     </div>
   );
