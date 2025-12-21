@@ -36,7 +36,7 @@ export default function EventCard({ cityEvent }: EventCardProps) {
           </div>
         </div>
 
-        <div className="absolute inset-0 backface-hidden rotate-y-180 flex flex-col py-6 px-4 rounded-md border border-gray-200 shadow-md bg-gray-100">
+        <div className="absolute inset-0 backface-hidden rotate-y-180 flex flex-col py-6 px-4 rounded-md border border-gray-200 shadow-md bg-gray-50">
           <div className="font-semibold text-black text-xl font-cinzel mb-2">
             {cityEvent.title}
           </div>

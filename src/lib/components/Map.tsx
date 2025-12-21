@@ -87,7 +87,7 @@ export default function Map() {
           />
         </div>
         <p className="mt-8 text-base font-medium">{selectedCity.description}</p>
-        <EventCardWheel events={selectedCity.events}/>
+        <EventCardWheel events={selectedCity.events} />
       </div>
     </div>
   );

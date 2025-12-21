@@ -203,7 +203,144 @@ export const cities: City[] = [
     coords: [40.4168, -3.7038],
     description:
       "Madrid is a city of grand boulevards, historic plazas, and world-class museums. Wander the Prado, Reina Sofía, and Thyssen-Bornemisza for unforgettable art, or stroll through Retiro Park and the bustling Puerta del Sol. Tapas bars, rooftop terraces, and lively neighborhoods keep the city buzzing from morning to night.",
-    events: [],
+    events: [
+      {
+        title: "Museo Nacional del Prado",
+        city: "Madrid",
+        imageLink: "https://media.cntraveler.com/photos/580775c2fefb7fe774d64246/16:9/w_2560,c_limit/GettyImages-104515838.jpg?mbid=social_retweet",
+        type: "sightseeing",
+        description:
+          "The Prado is one of Europe’s premier art museums, home to works by Velázquez, Goya, and Bosch. The galleries are large but well-organized, making it easy to focus on highlights. Even a short visit leaves a strong impression.",
+      },
+      {
+        title: "Palacio Real de Madrid",
+        city: "Madrid",
+        imageLink: "https://images.musement.com/cover/0003/11/royal-palace-of-madrid_header-210276.jpeg?w=1200&h=630&q=95&fit=crop",
+        type: "sightseeing",
+        description:
+          "The Royal Palace showcases Madrid’s grandeur through massive halls, detailed ceilings, and formal gardens. It’s still used for state ceremonies, giving it a lived-in feel despite its scale. Views toward the city add to the experience.",
+      },
+      {
+        title: "Real Jardín Botánico",
+        city: "Madrid",
+        imageLink: "https://d36tnp772eyphs.cloudfront.net/blogs/1/2020/03/Madrid-Botanic-Garden.jpg",
+        type: "nature",
+        description:
+          "Located next to the Prado, the Royal Botanical Garden offers a quiet contrast to the city streets. Tree-lined paths and seasonal flowers make it ideal for a slow walk. It’s especially relaxing on a sunny afternoon.",
+      },
+      {
+        title: "Estadio Santiago Bernabéu Tour",
+        city: "Madrid",
+        imageLink: "https://upload.wikimedia.org/wikipedia/commons/0/0e/Estadio_Santiago_Bernab%C3%A9u_Madrid.jpg",
+        type: "activities",
+        description:
+          "The Bernabéu tour gives behind-the-scenes access to one of football’s most famous stadiums. Walk through the stands, locker rooms, and trophy displays. It’s a must for sports fans and surprisingly engaging even for casual visitors.",
+      },
+      {
+        title: "Parque del Buen Retiro",
+        city: "Madrid",
+        imageLink: "https://travel.usnews.com/images/Noppasin_Wongchumpark-outside.jpg",
+        type: "nature",
+        description:
+          "Retiro Park is Madrid’s favorite green space, with wide paths, gardens, and a central lake. Rent a rowboat, relax on the grass, or walk past street performers. It’s an easy place to spend an unplanned afternoon.",
+      },
+      {
+        title: "Go-Karting Experience",
+        city: "Madrid",
+        imageLink: "https://offloadmedia.feverup.com/madridsecreto.co/wp-content/uploads/2022/12/27165528/shutterstock_2171045113-1-1024x683.jpg",
+        type: "activities",
+        description:
+          "Go-kart tracks around Madrid offer a high-energy break from sightseeing. Races are short, competitive, and easy to jump into. It’s a fun group activity that doesn’t require much planning.",
+      },
+      {
+        title: "Golf in Madrid",
+        city: "Madrid",
+        imageLink: "https://www.teetimes.pt/slideshow/pictures/course/395/spain-golf-santander-img1.webp",
+        type: "activities",
+        description:
+          "Golf venues around Madrid offer a relaxed, social activity with a unique twist. It’s less about competition and more about atmosphere. Great for a slower-paced afternoon with friends.",
+      },
+      {
+        title: "Madrid Bike Tour",
+        city: "Madrid",
+        imageLink: "https://www.trixi.com/storage/2015/01/bike_tour_madrid_0010.jpg",
+        type: "activities",
+        description:
+          "Bike tours are a fast way to see Madrid’s main neighborhoods and landmarks. Routes often pass Retiro, historic districts, and major plazas. It’s active without being exhausting.",
+      },
+      {
+        title: "Tapas & Paella Cooking Class",
+        city: "Madrid",
+        imageLink: "https://wineofthemonthclub.com/cdn/shop/files/20240115234445-2023_0509_spanishtable_paellaparty_smaller.jpg?v=1726833472&width=1500",
+        type: "food",
+        description:
+          "Hands-on cooking classes focus on classic Spanish dishes like paella and traditional tapas. You’ll cook, eat, and usually share wine with the group. It’s social, casual, and surprisingly fun.",
+      },
+      {
+        title: "Mercado de San Miguel",
+        city: "Madrid",
+        imageLink: "https://assets2.devourtours.com/wp-content/uploads/mercado-san-miguel-interior.jpeg",
+        type: "food",
+        description:
+          "This historic food hall is packed with tapas counters, wine stalls, and desserts. It’s best for grazing rather than full meals. The atmosphere stays lively well into the evening.",
+      },
+      {
+        title: "Chocolatería San Ginés",
+        city: "Madrid",
+        imageLink: "https://www.rappler.com/tachyon/2025/10/sangines.png",
+        type: "food",
+        description:
+          "San Ginés is famous for churros and thick hot chocolate, especially late at night. Lines move quickly, and the experience is fast and satisfying. It’s a classic Madrid ritual.",
+      },
+      {
+        title: "Madrid Nightlife: Bars, Clubs & Live Shows",
+        city: "Madrid",
+        imageLink: "https://nightlifemadrid.com/wp-content/uploads/2020/05/Clubs-Madrid-Fucking-Monday.jpg",
+        type: "nightlife",
+        description:
+          "Madrid’s nightlife starts late and rarely slows down before sunrise. From cocktail bars to live music and clubs, options are everywhere. The energy feels constant and unforced.",
+      },
+      {
+        title: "Plaza de Cibeles & Plaza Mayor",
+        city: "Madrid",
+        imageLink: "https://a.travel-assets.com/findyours-php/viewfinder/images/res70/348000/348758-Plaza-De-Cibeles.jpg",
+        type: "sightseeing",
+        description:
+          "These two plazas show different sides of Madrid, from grand civic architecture to historic public space. Both are easy to reach on foot. They’re especially atmospheric in the evening.",
+      },
+      {
+        title: "Gran Vía",
+        city: "Madrid",
+        imageLink: "https://a.travel-assets.com/findyours-php/viewfinder/images/res70/26000/26515-Madrid.jpg",
+        type: "sightseeing",
+        description:
+          "Gran Vía is Madrid’s main artery, lined with theaters, shops, and classic facades. It’s busy at all hours and well-lit at night. Walking it gives a good sense of the city’s scale and energy.",
+      },
+      {
+        title: "Puerta del Sol",
+        city: "Madrid",
+        imageLink: "https://www.spain.info/export/sites/segtur/.content/imagenes/cabeceras-grandes/madrid/puerta-del-sol-pano-s1276320760-c-ed-valery-bareta.jpg",
+        type: "sightseeing",
+        description:
+          "Puerta del Sol marks the symbolic center of Spain. Crowds come and go constantly, making it feel alive at all times. It’s a common meeting point before heading out.",
+      },
+      {
+        title: "Parque Warner Madrid",
+        city: "Madrid",
+        imageLink: "https://visitmadrid-files.s3.eu-west-1.amazonaws.com/files/styles/scale_webp_1280x720/public/2024-01/WarnerBros-Madrid.jpg?itok=Sc1azlMd",
+        type: "activities",
+        description:
+          "Parque Warner offers roller coasters, shows, and themed zones just outside the city. It’s a full-day commitment but delivers high-energy fun. Best for groups wanting a break from urban exploring.",
+      },
+      {
+        title: "All-Night Bar Hopping: Malasaña → Chueca → Gran Vía",
+        city: "Madrid",
+        imageLink: "https://offloadmedia.feverup.com/madridsecreto.co/wp-content/uploads/2022/01/07180116/6N0A5701.jpg",
+        type: "nightlife",
+        description:
+          "This classic route moves from alternative bars to high-energy clubs as the night goes on. Neighborhoods blend together naturally, making it easy to keep going. Expect late starts and very late finishes.",
+      },
+    ],
   },
   {
     name: "Granada",
