@@ -135,7 +135,7 @@ export const cities: City[] = [
           "Take a day trip to Montserrat for dramatic mountain scenery and spiritual atmosphere. The rugged terrain around the monastery is ideal for mountain biking and outdoor adventure. Trails range from easy to challenging, all with unforgettable views.",
       },
       {
-        title: "Flamenco Show",
+        title: "Flamenco Show - Barcelona",
         city: "Barcelona",
         imageLink:
           "https://festivalboca.org/sites/FestivalBoca/cache/file/17F5946D-FCCA-45F9-B953346FE01F3DA7.jpg",
@@ -380,7 +380,126 @@ export const cities: City[] = [
     coords: [37.3891, -5.9845],
     description:
       "Seville radiates warmth and color through its flamenco rhythms and historic streets. The Alcázar, Seville Cathedral, and Plaza de España showcase its rich architecture, while the Triana neighborhood and local tapas bars bring the city to life. Sunlit squares and lively nightlife make every moment unforgettable.",
-    events: [],
+    events: [
+      {
+        title: "Real Alcázar of Seville",
+        city: "Seville",
+        imageLink:
+          "https://d2i7eq829tbbje.cloudfront.net/webp/medium/alcazar11_P_3891_86a9edf2-5941-4b6a-8f2f-6d7623f24c0d",
+        type: "sightseeing",
+        description:
+          "The Real Alcázar is a royal palace layered with Moorish and Christian design, known for detailed tilework and calm gardens. Wandering through the courtyards feels unhurried and immersive. It’s one of Seville’s most rewarding stops.",
+      },
+      {
+        title: "Seville Cathedral & La Giralda",
+        city: "Seville",
+        imageLink:
+          "https://cliomusetours.com/wp-content/uploads/2020/07/henrique-ferreira-62QRdDoe44M-unsplash-1.jpg",
+        type: "sightseeing",
+        description:
+          "Seville Cathedral is massive and surprisingly atmospheric, with Columbus’s tomb inside. La Giralda’s ramped climb leads to wide views over the city. It’s an easy landmark to build the day around.",
+      },
+      {
+        title: "Plaza de España",
+        city: "Seville",
+        imageLink:
+          "https://www.turismosevilla.org/sites/default/files/2023-07/plaza-espaa-sevilla-espaa_52618454587_o_0.jpg",
+        type: "sightseeing",
+        description:
+          "Plaza de España is an open, curved plaza with canals, bridges, and tiled alcoves representing Spain’s regions. It’s spacious and relaxed despite its scale. Late afternoon light works best here.",
+      },
+      {
+        title: "Barrio Santa Cruz",
+        city: "Seville",
+        imageLink:
+          "https://travel.usnews.com/images/Barrio-de-Santa-Cruz-Credit_Carlos_Koblischek-Getty_Images.jpg",
+        type: "sightseeing",
+        description:
+          "Santa Cruz is a dense web of narrow streets, small plazas, and orange trees. It’s best explored slowly without a plan. The neighborhood feels especially alive in the early evening.",
+      },
+      {
+        title: "Triana Neighborhood",
+        city: "Seville",
+        imageLink:
+          "https://www.mediastorehouse.com/p/251/sunset-view-triana-neighbourhood-guadalquivir-23901109.jpg.webp",
+        type: "sightseeing",
+        description:
+          "Across the river, Triana offers a more local feel with ceramic shops, food spots, and relaxed bars. The river views back toward the old city are a highlight. It’s a good area for sunset walks and dinner.",
+      },
+      {
+        title: "Parque de María Luisa",
+        city: "Seville",
+        imageLink:
+          "https://sevillasecreta.co/wp-content/uploads/2020/06/shutterstock_1324665797-1-1024x651.jpg",
+        type: "nature",
+        description:
+          "This large park next to Plaza de España provides shade, fountains, and quiet paths. It’s ideal for slowing the pace between sightseeing stops. Easy to enter and exit without planning.",
+      },
+      {
+        title: "Guadalquivir River Walk & Cruise",
+        city: "Seville",
+        imageLink:
+          "https://mediaim.expedia.com/localexpert/367984/9abefdff-1cf1-48af-9814-4a2626862cc2.jpg",
+        type: "nature",
+        description:
+          "Walking or cruising along the Guadalquivir River is flat, scenic, and especially good near sunset. Bridges and historic buildings line the water, giving great views from either perspective. It’s a relaxed way to shift from daytime sightseeing into evening plans.",
+      },
+
+      {
+        title: "Metropol Parasol (Setas de Sevilla)",
+        city: "Seville",
+        imageLink:
+          "https://arquitecturaviva.com/assets/uploads/obras/38979/av_imagen_vertical.webp?h=056c8ece",
+        type: "nightlife",
+        description:
+          "The Setas’ rooftop walkway offers wide views over Seville and is popular for sunset drinks. The structure feels modern against the historic city. It’s an easy pre-dinner stop.",
+      },
+      {
+        title: "Traditional Tapas Crawl",
+        city: "Seville",
+        imageLink:
+          "https://www.thewanderinghedonist.com/wp-content/uploads/2022/02/FeatureTapasTour.jpg",
+        type: "food",
+        description:
+          "Seville is ideal for bar-hopping tapas rather than long meals. Ordering a few dishes and moving on is part of the rhythm. The experience feels social and low-pressure.",
+      },
+      {
+        title: "Flamenco Show - Seville",
+        city: "Seville",
+        imageLink:
+          "https://notjustatourist.com/wp-content/uploads/2015/08/Kati2.jpg",
+        type: "nightlife",
+        description:
+          "Flamenco in Seville is intense, close-up, and emotional. Performances are usually compact and high-energy. It’s an easy cultural add-on to an evening out.",
+      },
+      {
+        title: "Late-Night Bars in Alameda de Hércules",
+        city: "Seville",
+        imageLink:
+          "https://static01.nyt.com/images/2017/05/07/travel/07HEADSUP1/07HEADSUP1-superJumbo.jpg",
+        type: "nightlife",
+        description:
+          "Alameda de Hércules is Seville’s late-night hub, with open plazas and bars that stay busy well past midnight. Spots like **Antique Theatro**, **Uthopia**, and **Fun Club** draw mixed crowds. The vibe is social rather than club-heavy.",
+      },
+      {
+        title: "Terraza EME Rooftop Bar",
+        city: "Seville",
+        imageLink:
+          "https://images.apirocket.io/images/6vkd6ta3/Galleries/AJsFO-HStP/IMG4525.jpg?w=1200&h=800&fit=cover&format=auto",
+        type: "nightlife",
+        description:
+          "This rooftop bar offers close-up views of the cathedral and a refined but relaxed setting. It’s popular for sunset cocktails. Best treated as a short stop before heading elsewhere.",
+      },
+      {
+        title: "Sala Cosmos",
+        city: "Seville",
+        imageLink:
+          "https://lh5.googleusercontent.com/p/AF1QipNcpPv9gLxccTFg5SMgIwSZJo6EjDX-rmgpKM-Y=w4048-h3036-k-no",
+        type: "nightlife",
+        description:
+          "Sala Cosmos is a popular nightclub in Seville known for its energetic crowd and mix of music styles, from house to reggaeton. It’s a go-to spot for dancing late into the night and draws a young, social crowd. The atmosphere stays lively well past midnight, making it a great choice for a big night out.",
+      },
+    ],
   },
   {
     name: "Ronda",
@@ -395,7 +514,53 @@ export const cities: City[] = [
     coords: [37.8882, -4.7794],
     description:
       "Córdoba blends Roman, Moorish, and Andalusian history in a mesmerizing cityscape. The Mezquita’s grand arches, the Alcázar de los Reyes Cristianos, and the charming Jewish Quarter showcase its heritage. Stroll fragrant patios, enjoy local cuisine, and feel the city’s serene yet vibrant atmosphere.",
-    events: [],
+    events: [
+      {
+        title: "Mezquita–Catedral de Córdoba",
+        city: "Cordoba",
+        imageLink:
+          "https://images.squarespace-cdn.com/content/v1/5c92008192441b7d4d98100a/8e794992-eae6-4cd2-bb57-7f41ca1deab6/L1010632.jpg",
+        type: "sightseeing",
+        description:
+          "The Mezquita–Catedral is Córdoba’s defining landmark, known for its rows of red-and-white arches and layered history. Walking through it feels immersive and slightly surreal. Even a short visit leaves a lasting impression.",
+      },
+      {
+        title: "La Judería (Jewish Quarter)",
+        city: "Cordoba",
+        imageLink:
+          "https://a.travel-assets.com/findyours-php/viewfinder/images/res70/345000/345199-Jewish-Quarter.jpg",
+        type: "sightseeing",
+        description:
+          "The Jewish Quarter is a compact maze of narrow streets and whitewashed buildings just outside the Mezquita. It’s easy to explore without a plan. The area feels calm and atmospheric, especially in the afternoon.",
+      },
+      {
+        title: "Puente Romano de Córdoba",
+        city: "Cordoba",
+        imageLink:
+          "https://tocordoba.com/wp-content/uploads/2021/09/puente-romano-1024x640.jpg",
+        type: "sightseeing",
+        description:
+          "The Roman Bridge stretches across the Guadalquivir River and offers clear views back toward the old city. It’s an easy walk from the historic center. Sunset adds a little extra atmosphere if timing works.",
+      },
+      {
+        title: "Alcázar de los Reyes Cristianos",
+        city: "Cordoba",
+        imageLink:
+          "https://www.espanaguide.com/images/cordoba/alcazar/alcazar-de-los-reyes-cristianos-cordoba-mobile.jpg",
+        type: "sightseeing",
+        description:
+          "This historic fortress features stone towers and landscaped gardens. It’s less crowded than the Mezquita and offers good city views. Worth visiting if your stopover allows extra time.",
+      },
+      {
+        title: "Traditional Córdoba Cuisine Stop",
+        city: "Cordoba",
+        imageLink:
+          "https://www.cnature.es/wp-content/uploads/2020/08/salmorejo-tradicional.jpg",
+        type: "food",
+        description:
+          "A quick stop for local dishes like salmorejo or flamenquín adds flavor without slowing your schedule. Many casual spots are clustered near the historic center. Ideal for a short, efficient break.",
+      },
+    ],
   },
   {
     name: "Toledo",
