@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { CityEvent } from "../itinerary/plan";
+import CityTag from "./CityTag";
 
 interface EventCardProps {
   cityEvent: CityEvent;
@@ -23,8 +24,8 @@ export default function EventCard({ cityEvent }: EventCardProps) {
         style={{ transformStyle: "preserve-3d" }}
       >
         <div className="absolute inset-0 backface-hidden flex flex-col py-6 px-4 rounded-md border border-gray-200 gap-4 shadow-md">
-          <div className="font-semibold text-black text-xl font-cinzel">
-            {cityEvent.title}
+          <div className="flex flex-row w-full justify-between font-semibold text-black text-xl">
+            <span className="font-cinzel">{cityEvent.title}</span>
           </div>
 
           <div className="flex-1 overflow-hidden rounded-sm">
@@ -37,8 +38,9 @@ export default function EventCard({ cityEvent }: EventCardProps) {
         </div>
 
         <div className="absolute inset-0 backface-hidden rotate-y-180 flex flex-col py-6 px-4 rounded-md border border-gray-200 shadow-md bg-gray-50">
-          <div className="font-semibold text-black text-xl font-cinzel mb-2">
-            {cityEvent.title}
+          <div className="flex flex-row w-full justify-between font-semibold text-black text-xl mb-2">
+            <span className="font-cinzel">{cityEvent.title}</span>
+            <CityTag cityName={cityEvent.city} />
           </div>
 
           <div className="text-sm text-gray-700 leading-relaxed overflow-auto">

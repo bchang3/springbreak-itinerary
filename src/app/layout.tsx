@@ -31,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`h-screen relative ${cinzel.variable} ${lato.className} antialiased`}
+        className={`h-screen relative ${cinzel.variable} ${lato.variable} ${lato.className} antialiased`}
       >
         <NavBar />
         {children}

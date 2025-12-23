@@ -18,9 +18,11 @@ export type EventType =
   | "food"
   | "activities"
   | "sightseeing";
+
+export type CityType = "Barcelona" | "Madrid" | "Seville" | "Cordoba";
 export interface CityEvent {
   title: string;
-  city: string;
+  city: CityType;
   type: EventType;
   imageLink: string;
   description: string;
@@ -29,7 +31,6 @@ export interface City {
   name: string;
   coords: [number, number];
   description: string;
-  tentative?: boolean;
   events: CityEvent[];
 }
 export const plan: Plan = {
@@ -368,14 +369,6 @@ export const cities: City[] = [
     ],
   },
   {
-    name: "Granada",
-    coords: [37.1773, -3.5986],
-    description:
-      "Granada captivates with its mix of Moorish history and Andalusian charm. The Alhambra palace and gardens overlook the Albaicín’s narrow, winding streets, offering breathtaking views. Sample local cuisine in traditional tapas bars and feel the city’s relaxed, timeless energy as the sun sets over the Sierra Nevada.",
-    tentative: true,
-    events: [],
-  },
-  {
     name: "Seville",
     coords: [37.3891, -5.9845],
     description:
@@ -494,20 +487,12 @@ export const cities: City[] = [
         title: "Sala Cosmos",
         city: "Seville",
         imageLink:
-          "https://lh5.googleusercontent.com/p/AF1QipNcpPv9gLxccTFg5SMgIwSZJo6EjDX-rmgpKM-Y=w4048-h3036-k-no",
+          "https://www.spain-nightlife.es/wp-content/uploads/2019/07/sala-kosmos.jpg",
         type: "nightlife",
         description:
           "Sala Cosmos is a popular nightclub in Seville known for its energetic crowd and mix of music styles, from house to reggaeton. It’s a go-to spot for dancing late into the night and draws a young, social crowd. The atmosphere stays lively well past midnight, making it a great choice for a big night out.",
       },
     ],
-  },
-  {
-    name: "Ronda",
-    coords: [36.7423, -5.1663],
-    description:
-      "Ronda is perched dramatically above a deep gorge, offering one of Spain’s most scenic settings. Cross the Puente Nuevo for sweeping views, explore the historic old town, and visit the ancient bullring, Plaza de Toros. Its compact streets and stunning vistas make it perfect for a day of discovery and reflection.",
-    events: [],
-    tentative: true,
   },
   {
     name: "Cordoba",
@@ -561,13 +546,5 @@ export const cities: City[] = [
           "A quick stop for local dishes like salmorejo or flamenquín adds flavor without slowing your schedule. Many casual spots are clustered near the historic center. Ideal for a short, efficient break.",
       },
     ],
-  },
-  {
-    name: "Toledo",
-    coords: [39.8628, -4.0273],
-    description:
-      "Toledo rises above the Tagus River with medieval charm and layered history. Explore the Alcázar, Toledo Cathedral, and winding streets of the old town, rich with Christian, Muslim, and Jewish heritage. Art, architecture, and artisan workshops make it a compact city full of surprises.",
-    tentative: true,
-    events: [],
   },
 ];

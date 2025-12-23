@@ -4,12 +4,7 @@ import "leaflet/dist/leaflet.css";
 import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css";
 import "leaflet-defaulticon-compatibility";
 import { useRef, useState } from "react";
-import {
-  basicMarkerIcon,
-  selectedMarkerIcon,
-  selectedTentativeMarkerIcon,
-  tentativeMarkerIcon,
-} from "./MarkerIcons";
+import { basicMarkerIcon, selectedMarkerIcon } from "./MarkerIcons";
 import { Icon } from "@iconify/react";
 import globeIcon from "@iconify-icons/lucide/globe";
 import { cities, City } from "../itinerary/plan";
@@ -45,12 +40,8 @@ export default function Map() {
               position={city.coords}
               icon={
                 selectedCity.name == city.name
-                  ? selectedCity.tentative
-                    ? selectedTentativeMarkerIcon
-                    : selectedMarkerIcon
-                  : city.tentative
-                    ? tentativeMarkerIcon
-                    : basicMarkerIcon
+                  ? selectedMarkerIcon
+                  : basicMarkerIcon
               }
               eventHandlers={{
                 click: () => {
