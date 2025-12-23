@@ -23,7 +23,7 @@ export default function EventCard({ cityEvent }: EventCardProps) {
         transition={{ duration: 0.25, ease: "easeInOut" }}
         style={{ transformStyle: "preserve-3d" }}
       >
-        <div className="absolute inset-0 backface-hidden flex flex-col py-6 px-4 rounded-md border border-gray-200 gap-4 shadow-md">
+        <div className="absolute inset-0 backface-hidden flex flex-col py-6 px-4 rounded-md border bg-white border-gray-200 gap-4 shadow-md">
           <div className="flex flex-row w-full justify-between font-semibold text-black text-xl">
             <span className="font-cinzel">{cityEvent.title}</span>
           </div>

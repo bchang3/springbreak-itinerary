@@ -8,3 +8,43 @@ import { twMerge } from "tailwind-merge";
 export const cn = (...inputs: ClassValue[]) => {
   return twMerge(clsx(inputs));
 };
+
+function getOrdinal(n: number): string {
+  if (n > 3 && n < 21) return "th";
+  switch (n % 10) {
+    case 1:
+      return "st";
+    case 2:
+      return "nd";
+    case 3:
+      return "rd";
+    default:
+      return "th";
+  }
+}
+
+export function getMonthAndWeekDay(date: Date): string {
+  const weekday = new Intl.DateTimeFormat("en-US", {
+    weekday: "long",
+  }).format(date);
+
+  const month = new Intl.DateTimeFormat("en-US", {
+    month: "long",
+  }).format(date);
+
+  const day = date.getDate();
+  const ordinal = getOrdinal(day);
+
+  return `${weekday}, ${month} ${day}${ordinal}`;
+}
+
+export function getWeekdayShort(date: Date): string {
+  return new Intl.DateTimeFormat("en-US", { weekday: "short" }).format(date);
+}
+
+export function getTime(date: Date): string {
+  return new Intl.DateTimeFormat("en-US", {
+    hour: "numeric",
+    minute: "2-digit",
+  }).format(date);
+}

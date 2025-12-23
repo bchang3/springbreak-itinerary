@@ -1,4 +1,6 @@
+import EventTag from "@/lib/components/EventTag";
 import { plan } from "@/lib/itinerary/plan";
+import { getWeekdayShort } from "@/lib/utils/utils";
 
 export default function Home() {
   return (
@@ -12,18 +14,23 @@ export default function Home() {
       </div>
       <div className="p-6">
         <h1 className="font-cinzel text-5xl font-semibold mb-2">March</h1>
-        <div className="flex flex-row gap-4 w-full h-96 p-4 overflow-scroll">
+        <div className="flex flex-row gap-4 w-full h-110 p-4 overflow-scroll">
           {plan.days.map((dayPlan) => {
             return (
               <div
-                className="relative min-w-80 border p-4 rounded-2xl h-80 hover:scale-103 transition-all"
+                className="flex flex-col gap-2 relative min-w-100 border p-4 rounded-2xl h-100 hover:scale-103 transition-all"
                 key={dayPlan.date.toString()}
               >
-                <div className="absolute top-4 left-4">
+                <div>
                   <p className="font-bold text-xl font-cinzel ">
-                    {dayPlan.date.getDate()}
+                    {dayPlan.date.getDate()} - {getWeekdayShort(dayPlan.date)}
                   </p>
                   <hr />
+                </div>
+                <div className="flex flex-col gap-2">
+                  {dayPlan.events.map((ev) => {
+                    return <EventTag cityEvent={ev} key={ev.title} />;
+                  })}
                 </div>
               </div>
             );
