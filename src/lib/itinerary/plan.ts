@@ -12,7 +12,8 @@ export type EventType =
   | "nature"
   | "food"
   | "activities"
-  | "sightseeing";
+  | "sightseeing"
+  | "empty";
 
 export type CityType = "Barcelona" | "Madrid" | "Seville" | "Cordoba";
 export interface CityEvent {
@@ -50,7 +51,7 @@ const barcaGame: CityEvent = {
   description:
     "Catch the electric atmosphere of a La Liga match at Camp Nou on March 15th, as Barcelona takes on Seville. The roar of tens of thousands of fans brings a thrilling energy unique to Spanish football. It’s an unforgettable cultural and sporting experience.",
   start: new Date(2026, 2, 13, 21),
-  end: new Date(2026, 2, 15, 23),
+  end: new Date(2026, 2, 13, 23),
 };
 const gothicQuarter: CityEvent = {
   title: "Gothic Quarter",
@@ -87,6 +88,8 @@ const barceloneta: CityEvent = {
   type: "nature",
   description:
     "Barceloneta Beach is the heart of Barcelona’s seaside vibe, with wide sandy shores and lively promenade bars. Even in cooler months, it’s great for strolling and drinks with a view. Sunset here is one of the city’s most social daily rituals.",
+  start: new Date(2026, 2, 14, 19),
+  end: new Date(2026, 2, 14, 20),
 };
 const montjuicHill: CityEvent = {
   title: "Montjuïc Hill",
@@ -149,6 +152,8 @@ const elBorn: CityEvent = {
   type: "nightlife",
   description:
     "El Born mixes history with trendy boutiques and buzzing cafes. Wander its narrow lanes, discover artisanal shops, and stop for tapas or drinks. It’s one of the city’s most dynamic and walkable neighborhoods.",
+  start: new Date(2026, 2, 14, 20),
+  end: new Date(2026, 2, 14, 21),
 };
 const portAventura: CityEvent = {
   title: "PortAventura Park",
@@ -159,13 +164,15 @@ const portAventura: CityEvent = {
     "Just outside Barcelona, PortAventura Park delivers thrilling rides and themed attractions for a full-day adventure. Roller coasters and shows make it perfect for a break from urban exploring. It’s one of Spain’s top amusement parks.",
 };
 const portVell: CityEvent = {
-  title: "Port Vell",
+  title: "Sunset Drinks at Port Vell",
   city: "Barcelona",
   imageLink:
     "https://www.barcelo.com/guia-turismo/wp-content/uploads/ok-port-vell.jpg",
   type: "sightseeing",
   description:
     "Port Vell’s marina area blends scenic waterfront promenades with lively restaurants and bars. Watch boats bobbing against the backdrop of the city at sunset. It’s a great place for a leisurely stroll or seaside drink.",
+  start: new Date(2026, 2, 14, 18),
+  end: new Date(2026, 2, 14, 19),
 };
 const laBoqueria: CityEvent = {
   title: "La Boqueria Market",
@@ -511,6 +518,16 @@ const cordobaFood: CityEvent = {
     "A quick stop for local dishes like salmorejo or flamenquín adds flavor without slowing your schedule. Many casual spots are clustered near the historic center. Ideal for a short, efficient break.",
 };
 
+const fridayPadding13: CityEvent = {
+  title: "Padding",
+  city: "Barcelona",
+  imageLink: "",
+  type: "empty",
+  description: "",
+  start: new Date(2026, 2, 13, 8),
+  end: new Date(2026, 2, 13, 18),
+};
+
 export const cities: City[] = [
   {
     name: "Barcelona",
@@ -601,7 +618,7 @@ export const cities: City[] = [
 export const plan: Plan = {
   days: [
     { date: new Date(2026, 2, 13), events: [] },
-    { date: new Date(2026, 2, 14), events: [] },
+    { date: new Date(2026, 2, 14), events: [fridayPadding13, portVell, barceloneta, elBorn] },
     { date: new Date(2026, 2, 15), events: [barcaGame] },
     { date: new Date(2026, 2, 16), events: [] },
     { date: new Date(2026, 2, 17), events: [] },

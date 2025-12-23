@@ -18,19 +18,26 @@ export default function EventTag({ cityEvent }: EventTagProps) {
   };
 
   const eventTypeToColor = {
-    nightlife: "bg-[#ae00ed]",
+    nightlife: "bg-[#0072b0]",
     food: "bg-[#edb200]",
     activities: "bg-[#e86a02]",
-    nature: "bg-[#00bf3d]",
-    sightseeing: "bg-[#be00ed]",
+    nature: "bg-[#00b04f]",
+    sightseeing: "bg-[#8a0027]",
+    empty: "bg-[#ffffff]"
   };
+  const duration =
+    cityEvent.end && cityEvent.start
+      ? (cityEvent.end.getTime() - cityEvent.start.getTime()) / (1000 * 60 * 60)
+      : 0;
+
   return (
     <div>
       <button
         className={cn(
-          "flex flex-row items-center cursor-pointer gap-1 min-w-fit px-3 py-2 h-fit border rounded-full font-lato text-white",
+          "flex flex-row justify-between items-center cursor-pointer gap-1 w-90 px-3 py-2 border rounded-full font-lato text-white",
           eventTypeToColor[cityEvent.type],
         )}
+        style={{ height: 20 + duration * 20 }}
         onClick={toggleDrawer(true)}
       >
         <div className="flex flex-row gap-2 text-sm w-40 items-center font-bold">
@@ -59,13 +66,13 @@ export default function EventTag({ cityEvent }: EventTagProps) {
               {cityEvent.title}
             </span>
             <div className="flex flex-col">
-            <span className="text-sm">
-              {cityEvent.start && getMonthAndWeekDay(cityEvent.start)}{" "}
-            </span>
-            <span className="text-xs -mt-1">
-              {cityEvent.start && getTime(cityEvent.start)} -{" "}
-              {cityEvent.end && getTime(cityEvent.end)}
-            </span>
+              <span className="text-sm">
+                {cityEvent.start && getMonthAndWeekDay(cityEvent.start)}{" "}
+              </span>
+              <span className="text-xs -mt-1">
+                {cityEvent.start && getTime(cityEvent.start)} -{" "}
+                {cityEvent.end && getTime(cityEvent.end)}
+              </span>
             </div>
           </div>
           <div className="flex-1 overflow-hidden rounded-sm">
