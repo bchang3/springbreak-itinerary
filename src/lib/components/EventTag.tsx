@@ -23,7 +23,7 @@ export default function EventTag({ cityEvent }: EventTagProps) {
     activities: "bg-[#e86a02]",
     nature: "bg-[#00b04f]",
     sightseeing: "bg-[#8a0027]",
-    empty: "bg-[#ffffff]"
+    empty: "bg-[#ffffff]",
   };
   const duration =
     cityEvent.end && cityEvent.start
@@ -37,7 +37,7 @@ export default function EventTag({ cityEvent }: EventTagProps) {
           "flex flex-row justify-between items-center cursor-pointer gap-1 w-90 px-3 py-2 border rounded-full font-lato text-white",
           eventTypeToColor[cityEvent.type],
         )}
-        style={{ height: 20 + duration * 20 }}
+        style={{ height: 30 + duration * 15 }}
         onClick={toggleDrawer(true)}
       >
         <div className="flex flex-row gap-2 text-sm w-40 items-center font-bold">

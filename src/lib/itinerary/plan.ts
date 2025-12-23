@@ -40,6 +40,8 @@ const sagradaFamilia: CityEvent = {
   type: "sightseeing",
   description:
     "Antoni Gaudí’s unfinished basilica is one of Barcelona’s most iconic landmarks, blending Gothic and Art Nouveau styles. Its soaring facades and stunning interior light make it a must‑see for any visitor. Book ahead to skip lines and catch the best views.",
+  start: new Date(2026, 2, 15, 10),
+  end: new Date(2026, 2, 15, 11, 30),
 };
 
 const barcaGame: CityEvent = {
@@ -50,8 +52,8 @@ const barcaGame: CityEvent = {
   type: "activities",
   description:
     "Catch the electric atmosphere of a La Liga match at Camp Nou on March 15th, as Barcelona takes on Seville. The roar of tens of thousands of fans brings a thrilling energy unique to Spanish football. It’s an unforgettable cultural and sporting experience.",
-  start: new Date(2026, 2, 13, 21),
-  end: new Date(2026, 2, 13, 23),
+  start: new Date(2026, 2, 15, 21),
+  end: new Date(2026, 2, 15, 23),
 };
 const gothicQuarter: CityEvent = {
   title: "Gothic Quarter",
@@ -61,6 +63,8 @@ const gothicQuarter: CityEvent = {
   type: "sightseeing",
   description:
     "Wander the maze of narrow streets in the historic Gothic Quarter, where medieval buildings hide lively plazas. Street performers, hidden cafes, and timeless architecture make every turn feel like discovery. It’s perfect for a relaxed afternoon of exploring.",
+  start: new Date(2026, 2, 15, 14),
+  end: new Date(2026, 2, 15, 15, 30),
 };
 const placaReial: CityEvent = {
   title: "Plaça Reial",
@@ -108,6 +112,8 @@ const ciutadellaPark: CityEvent = {
   type: "nature",
   description:
     "Ciutadella Park is Barcelona’s green heart, filled with fountains, sculptures, and wide tree-lined paths. It’s perfect for a relaxed stroll, a picnic, or people-watching near the lake. You can rent a rowboat, visit the small zoo, or simply enjoy the open space away from the city bustle.",
+  start: new Date(2026, 2, 15, 15, 30),
+  end: new Date(2026, 2, 15, 17),
 };
 const montserrat: CityEvent = {
   title: "Montserrat & Mountain Biking",
@@ -118,6 +124,18 @@ const montserrat: CityEvent = {
   description:
     "Take a day trip to Montserrat for dramatic mountain scenery and spiritual atmosphere. The rugged terrain around the monastery is ideal for mountain biking and outdoor adventure. Trails range from easy to challenging, all with unforgettable views.",
 };
+const plazaCatalunya: CityEvent = {
+  title: "Plaça de Catalunya",
+  city: "Barcelona",
+  imageLink:
+    "https://www.barcelo.com/guia-turismo/wp-content/uploads/ok-plaza-de-catalunya.jpg",
+  type: "sightseeing",
+  description:
+    "Plaça de Catalunya sits at the crossroads of Barcelona’s old city and modern avenues. It’s a natural meeting point, surrounded by shops, cafés, and constant movement. From here, it’s easy to head toward the Gothic Quarter, El Born, or down La Rambla.",
+  start: new Date(2026, 2, 15, 13, 30),
+  end: new Date(2026, 2, 15, 14),
+};
+
 const flamencoBarca: CityEvent = {
   title: "Flamenco Show - Barcelona",
   city: "Barcelona",
@@ -182,6 +200,8 @@ const laBoqueria: CityEvent = {
   type: "food",
   description:
     "La Boqueria is Barcelona’s famous food market, teeming with fresh produce, tapas stands, and local flavors. Sample jamón, seafood, and fresh juice as you wander vibrant stalls. It’s a delicious snapshot of Catalan cuisine.",
+  start: new Date(2026, 2, 15, 17),
+  end: new Date(2026, 2, 15, 18),
 };
 
 const delPradoMuseum: CityEvent = {
@@ -618,8 +638,21 @@ export const cities: City[] = [
 export const plan: Plan = {
   days: [
     { date: new Date(2026, 2, 13), events: [] },
-    { date: new Date(2026, 2, 14), events: [fridayPadding13, portVell, barceloneta, elBorn] },
-    { date: new Date(2026, 2, 15), events: [barcaGame] },
+    {
+      date: new Date(2026, 2, 14),
+      events: [fridayPadding13, portVell, barceloneta, elBorn],
+    },
+    {
+      date: new Date(2026, 2, 15),
+      events: [
+        sagradaFamilia,
+        plazaCatalunya,
+        gothicQuarter,
+        ciutadellaPark,
+        laBoqueria,
+        barcaGame,
+      ],
+    },
     { date: new Date(2026, 2, 16), events: [] },
     { date: new Date(2026, 2, 17), events: [] },
     { date: new Date(2026, 2, 18), events: [] },
