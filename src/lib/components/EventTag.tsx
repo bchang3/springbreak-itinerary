@@ -13,7 +13,6 @@ export default function EventTag({ cityEvent }: EventTagProps) {
   const [open, setOpen] = useState(false);
 
   const toggleDrawer = (newOpen: boolean) => () => {
-    console.log("Toggle", newOpen);
     setOpen(newOpen);
   };
 
@@ -23,6 +22,7 @@ export default function EventTag({ cityEvent }: EventTagProps) {
     activities: "bg-[#e86a02]",
     nature: "bg-[#00b04f]",
     sightseeing: "bg-[#8a0027]",
+    train: "bg-[#cf5a06]",
     empty: "bg-[#ffffff]",
   };
   const duration =

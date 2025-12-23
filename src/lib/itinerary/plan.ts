@@ -13,7 +13,8 @@ export type EventType =
   | "food"
   | "activities"
   | "sightseeing"
-  | "empty";
+  | "empty"
+  | "train";
 
 export type CityType = "Barcelona" | "Madrid" | "Seville" | "Cordoba";
 export interface CityEvent {
@@ -548,6 +549,16 @@ const fridayPadding13: CityEvent = {
   end: new Date(2026, 2, 13, 18),
 };
 
+const madridBarcaTrain: CityEvent = {
+  title: "Train from Barcelona - Madrid",
+  city: "Barcelona",
+  imageLink: "https://media.cntraveler.com/photos/68ac749c71f7633489ed72c8/16:9/w_2560%2Cc_limit/082525-Al%2520Andalus-PR-Global-Al%2520Andalus%2520-%2520Olivos%2520en%2520Linares%252002.jpg",
+  type: "train",
+  description: "Travel from Barcelona to Madrid (~ 3 hours)",
+  start: new Date(2026, 2, 16, 12),
+  end: new Date(2026, 2, 16, 15),
+};
+
 export const cities: City[] = [
   {
     name: "Barcelona",
@@ -653,7 +664,7 @@ export const plan: Plan = {
         barcaGame,
       ],
     },
-    { date: new Date(2026, 2, 16), events: [] },
+    { date: new Date(2026, 2, 16), events: [madridBarcaTrain] },
     { date: new Date(2026, 2, 17), events: [] },
     { date: new Date(2026, 2, 18), events: [] },
     { date: new Date(2026, 2, 19), events: [] },
