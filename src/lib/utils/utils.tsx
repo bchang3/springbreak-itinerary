@@ -26,10 +26,12 @@ function getOrdinal(n: number): string {
 export function getMonthAndWeekDay(date: Date): string {
   const weekday = new Intl.DateTimeFormat("en-US", {
     weekday: "long",
+    timeZone: "UTC",
   }).format(date);
 
   const month = new Intl.DateTimeFormat("en-US", {
     month: "long",
+    timeZone: "UTC",
   }).format(date);
 
   const day = date.getDate();
@@ -39,12 +41,16 @@ export function getMonthAndWeekDay(date: Date): string {
 }
 
 export function getWeekdayShort(date: Date): string {
-  return new Intl.DateTimeFormat("en-US", { weekday: "short" }).format(date);
+  return new Intl.DateTimeFormat("en-US", {
+    weekday: "short",
+    timeZone: "UTC",
+  }).format(date);
 }
 
 export function getTime(date: Date): string {
   return new Intl.DateTimeFormat("en-US", {
     hour: "numeric",
     minute: "2-digit",
+    timeZone: "UTC",
   }).format(date);
 }

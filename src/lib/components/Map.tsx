@@ -17,7 +17,7 @@ export default function Map() {
   const defaultZoom = 5;
 
   return (
-    <div className="flex flex-col md:flex-row gap-6 w-full h-full">
+    <div className="flex flex-col md:flex-row gap-6 w-full h-[180vh]">
       <div className="relative w-full h-[40vh] md:w-3/5 md:h-[80vh] overflow-hidden shadow-lg border-[3px]">
         <MapContainer
           center={defaultCenter}
@@ -66,7 +66,7 @@ export default function Map() {
           <Icon icon={globeIcon} width={20} height={20} />
         </button>
       </div>
-      <div className="flex flex-col gap-2 h-[40vh] w-full md:h-full md:w-2/5">
+      <div className="flex flex-col gap-2 h-[100vh] w-full md:h-full md:w-2/5">
         <h1 className="font-cinzel font-semibold text-3xl">
           {selectedCity.name}
         </h1>
