@@ -14,7 +14,8 @@ export type EventType =
   | "activities"
   | "sightseeing"
   | "empty"
-  | "train";
+  | "train"
+  | "plane";
 
 export type CityType = "Barcelona" | "Madrid" | "Seville" | "Cordoba";
 export interface CityEvent {
@@ -647,6 +648,50 @@ const cordobaSevilleTrain: CityEvent = {
   end: new Date(Date.UTC(2026, 2, 19, 17)),
 };
 
+const chicagoBarcelonaPlane1: CityEvent = {
+  title: "Plane from Chicago - Barcelona",
+  city: "Barcelona",
+  imageLink:
+    "https://www.travelandleisure.com/thmb/AOYoBM7-dy8sZIeKoKUPI-EeTfk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/TAL-airplane-landing-spain-SPANISHAIRLINE0625-a8580b3b8296431ea884699c76e1becf.jpg",
+  type: "plane",
+  description: "Travel from Chicago to Barcelona (~ 12 hours, 1 stop)",
+  start: new Date(Date.UTC(2026, 2, 13, 23, 35)),
+  end: new Date(Date.UTC(2026, 2, 13, 23, 59)),
+};
+
+const chicagoBarcelonaPlane2: CityEvent = {
+  title: "Plane from Chicago - Barcelona",
+  city: "Barcelona",
+  imageLink:
+    "https://www.travelandleisure.com/thmb/AOYoBM7-dy8sZIeKoKUPI-EeTfk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/TAL-airplane-landing-spain-SPANISHAIRLINE0625-a8580b3b8296431ea884699c76e1becf.jpg",
+  type: "plane",
+  description: "Travel from Chicago to Barcelona (~ 12 hours, 1 stop)",
+  start: new Date(Date.UTC(2026, 2, 14, 0)),
+  end: new Date(Date.UTC(2026, 2, 14, 17, 45)),
+};
+
+const madridChicagoPlane: CityEvent = {
+  title: "Plane from Madrid - Chicago",
+  city: "Madrid",
+  imageLink:
+    "https://www.travelandleisure.com/thmb/AOYoBM7-dy8sZIeKoKUPI-EeTfk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/TAL-airplane-landing-spain-SPANISHAIRLINE0625-a8580b3b8296431ea884699c76e1becf.jpg",
+  type: "plane",
+  description: "Travel from Chicago to Barcelona (~ 12 hours, 1 stop)",
+  start: new Date(Date.UTC(2026, 2, 20, 10)),
+  end: new Date(Date.UTC(2026, 2, 20, 16)),
+};
+
+const lastDayPadding: CityEvent = {
+  title: "Padding",
+  city: "Madrid",
+  imageLink:
+    "https://www.travelandleisure.com/thmb/AOYoBM7-dy8sZIeKoKUPI-EeTfk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/TAL-airplane-landing-spain-SPANISHAIRLINE0625-a8580b3b8296431ea884699c76e1becf.jpg",
+  type: "empty",
+  description: "Travel from Chicago to Barcelona (~ 12 hours, 1 stop)",
+  start: new Date(Date.UTC(2026, 2, 20, 16)),
+  end: new Date(Date.UTC(2026, 2, 20, 23, 59)),
+};
+
 export const cities: City[] = [
   {
     name: "Barcelona",
@@ -736,10 +781,18 @@ export const cities: City[] = [
 
 export const plan: Plan = {
   days: [
-    { date: new Date(Date.UTC(2026, 2, 13)), events: [] },
+    {
+      date: new Date(Date.UTC(2026, 2, 13)),
+      events: [[chicagoBarcelonaPlane1]],
+    },
     {
       date: new Date(Date.UTC(2026, 2, 14)),
-      events: [[portVell], [barceloneta], [montjuicHill]],
+      events: [
+        [chicagoBarcelonaPlane2],
+        [portVell],
+        [barceloneta],
+        [montjuicHill],
+      ],
     },
     {
       date: new Date(Date.UTC(2026, 2, 15)),
@@ -797,6 +850,9 @@ export const plan: Plan = {
         [terrazaBar],
       ],
     },
-    { date: new Date(Date.UTC(2026, 2, 21)), events: [] },
+    {
+      date: new Date(Date.UTC(2026, 2, 21)),
+      events: [[madridChicagoPlane], [lastDayPadding]],
+    },
   ],
 };

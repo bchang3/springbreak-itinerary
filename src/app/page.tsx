@@ -27,7 +27,7 @@ export default function Home() {
                   </p>
                   <hr />
                 </div>
-                <div className="flex flex-col h-full gap-2 justify-center w-full">
+                <div className="flex flex-col h-full gap-2 justify-end w-full">
                   {dayPlan.events.map((events) => {
                     if (events[0].start)
                       return (

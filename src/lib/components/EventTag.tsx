@@ -24,6 +24,7 @@ export default function EventTag({ cityEvent, hideTime }: EventTagProps) {
     nature: "bg-[#00b04f]",
     sightseeing: "bg-[#8a0027]",
     train: "bg-[#cf5a06]",
+    plane: "bg-[#919191]",
     empty: "bg-[#ffffff]",
   };
   const duration =
@@ -35,11 +36,11 @@ export default function EventTag({ cityEvent, hideTime }: EventTagProps) {
     <div className="w-full">
       <button
         className={cn(
-          "flex flex-row justify-between items-center cursor-pointer gap-1 w-full px-3 py-2 border rounded-full font-lato text-white",
+          "flex flex-row justify-between items-center cursor-pointer gap-1 w-full px-3 py-2 border rounded-4xl font-lato text-white",
           eventTypeToColor[cityEvent.type],
         )}
-        style={{ height: 30 + duration * 15 }}
-        onClick={toggleDrawer(true)}
+        style={{ height: Math.min(30 + duration * 15, 250) }}
+        onClick={cityEvent.type != "empty" ? toggleDrawer(true) : () => {}}
       >
         {!hideTime && (
           <div className="flex flex-row gap-2 text-sm min-w-fit items-center font-bold">
