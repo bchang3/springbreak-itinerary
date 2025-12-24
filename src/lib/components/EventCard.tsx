@@ -26,7 +26,13 @@ export default function EventCard({ cityEvent }: EventCardProps) {
         <div className="absolute inset-0 backface-hidden flex flex-col py-6 px-4 rounded-md border bg-white border-gray-200 gap-4 shadow-md">
           <div className="flex flex-row items-center relative pr-4 w-full justify-between font-semibold text-black text-xl">
             <span className="font-cinzel">{cityEvent.title}</span>
-            {cityEvent.start && <img src="/star.png" alt="star" className="absolute top-1 right-1 h-4 w-4"/>}
+            {cityEvent.start && (
+              <img
+                src="/star.png"
+                alt="star"
+                className="absolute top-1 right-1 h-4 w-4"
+              />
+            )}
           </div>
 
           <div className="flex-1 overflow-hidden rounded-sm">

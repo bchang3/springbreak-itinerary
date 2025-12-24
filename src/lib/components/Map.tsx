@@ -14,14 +14,14 @@ export default function Map() {
   const [selectedCity, setSelectedCity] = useState<City>(cities[0]);
   const mapRef = useRef<L.Map>(null);
   const defaultCenter: [number, number] = [40.4168, -3.7038];
-  const defaultZoom = 6;
+  const defaultZoom = 5;
 
   return (
-    <div className="flex flex-row gap-6 w-full h-full">
-      <div className="relative w-3/5 h-[80vh] overflow-hidden shadow-lg border-[3px]">
+    <div className="flex flex-col md:flex-row gap-6 w-full h-full">
+      <div className="relative w-full h-[40vh] md:w-3/5 md:h-[80vh] overflow-hidden shadow-lg border-[3px]">
         <MapContainer
           center={defaultCenter}
-          zoom={6}
+          zoom={defaultZoom}
           minZoom={3}
           scrollWheelZoom={true}
           className="h-full w-full"
@@ -66,18 +66,18 @@ export default function Map() {
           <Icon icon={globeIcon} width={20} height={20} />
         </button>
       </div>
-      <div className="flex flex-col gap-2 h-full w-2/5">
+      <div className="flex flex-col gap-2 h-[40vh] w-full md:h-full md:w-2/5">
         <h1 className="font-cinzel font-semibold text-3xl">
           {selectedCity.name}
         </h1>
-        <div className="h-[30vh] self-start w-full">
+        <div className="h-[20vh] md:h-[30vh] self-start w-full">
           <img
             src={`/pictures/cities/${selectedCity.name}.jpg`}
             className="w-full h-full object-cover shadow-sm rounded-sm"
             alt={selectedCity.name}
           />
         </div>
-        <p className="mt-8 text-base font-medium">{selectedCity.description}</p>
+        <p className="mt-2 md:mt-8 text-base font-medium">{selectedCity.description}</p>
         <EventCardWheel events={selectedCity.events} />
       </div>
     </div>

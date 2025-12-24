@@ -14,11 +14,11 @@ export default function Home() {
       </div>
       <div className="p-6">
         <h1 className="font-cinzel text-5xl font-semibold mb-2">March</h1>
-        <div className="flex flex-row gap-4 w-full h-130 p-4 overflow-scroll">
+        <div className="flex flex-col md:flex-row gap-4 w-full md:h-130 p-4 md:overflow-scroll">
           {plan.days.map((dayPlan) => {
             return (
               <div
-                className="flex flex-col flex-1 gap-2 relative min-w-100 w-100 border p-4 rounded-2xl h-120 hover:scale-103 transition-all"
+                className="flex flex-col flex-1 gap-2 relative w-full md:min-w-100  border p-4 rounded-2xl h-120 hover:scale-103 transition-all"
                 key={dayPlan.date.toString()}
               >
                 <div>

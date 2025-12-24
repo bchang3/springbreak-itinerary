@@ -15,7 +15,7 @@ export default function Food() {
           alt="Night Life"
         />
       </div>
-      <div className="grid grid-cols-5 gap-12 h-fit p-6">
+      <div className="flex flex-col md:grid md:grid-cols-5 gap-12 h-fit p-6">
         {events.map((ev) => (
           <EventCard key={ev.title} cityEvent={ev} />
         ))}
