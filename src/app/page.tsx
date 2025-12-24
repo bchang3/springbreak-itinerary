@@ -18,7 +18,7 @@ export default function Home() {
           {plan.days.map((dayPlan) => {
             return (
               <div
-                className="flex flex-col flex-1 gap-2 relative w-full md:min-w-100  border p-4 rounded-2xl h-120 hover:scale-103 transition-all"
+                className="flex flex-col flex-1 gap-2 relative w-full md:min-w-100  border p-4 rounded-2xl h-fit md:h-120 hover:scale-103 transition-all"
                 key={dayPlan.date.toString()}
               >
                 <div>

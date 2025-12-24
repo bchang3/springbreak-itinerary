@@ -50,6 +50,7 @@ export default function NavBar() {
         </div>
         <Drawer anchor="left" open={menuOpen} onClose={() => toggleMenu(false)}>
           <nav className="flex flex-col items-center justify-between w-50">
+            <NavLink href="/">Home</NavLink>
             <NavLink href="/map">Map</NavLink>
             <NavLink href="/food">Food</NavLink>
             <NavLink href="/night-life">Night Life</NavLink>

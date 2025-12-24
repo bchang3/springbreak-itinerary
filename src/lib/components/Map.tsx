@@ -77,7 +77,9 @@ export default function Map() {
             alt={selectedCity.name}
           />
         </div>
-        <p className="mt-2 md:mt-8 text-base font-medium">{selectedCity.description}</p>
+        <p className="mt-2 md:mt-8 text-base font-medium">
+          {selectedCity.description}
+        </p>
         <EventCardWheel events={selectedCity.events} />
       </div>
     </div>
