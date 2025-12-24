@@ -24,7 +24,7 @@ export default function EventTag({ cityEvent, hideTime }: EventTagProps) {
     nature: "bg-[#00b04f]",
     sightseeing: "bg-[#8a0027]",
     train: "bg-[#cf5a06]",
-    plane: "bg-[#919191]",
+    plane: "bg-[#63d4b9]",
     empty: "bg-[#ffffff]",
   };
   const duration =
