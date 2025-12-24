@@ -8,8 +8,9 @@ import Drawer from "@mui/material/Drawer";
 
 interface EventTagProps {
   cityEvent: CityEvent;
+  hideTime?: boolean;
 }
-export default function EventTag({ cityEvent }: EventTagProps) {
+export default function EventTag({ cityEvent, hideTime }: EventTagProps) {
   const [open, setOpen] = useState(false);
 
   const toggleDrawer = (newOpen: boolean) => () => {
@@ -19,7 +20,7 @@ export default function EventTag({ cityEvent }: EventTagProps) {
   const eventTypeToColor = {
     nightlife: "bg-[#0072b0]",
     food: "bg-[#edb200]",
-    activities: "bg-[#e86a02]",
+    activities: "bg-[#00aab0]",
     nature: "bg-[#00b04f]",
     sightseeing: "bg-[#8a0027]",
     train: "bg-[#cf5a06]",
@@ -31,24 +32,28 @@ export default function EventTag({ cityEvent }: EventTagProps) {
       : 0;
 
   return (
-    <div>
+    <div className="w-full">
       <button
         className={cn(
-          "flex flex-row justify-between items-center cursor-pointer gap-1 w-90 px-3 py-2 border rounded-full font-lato text-white",
+          "flex flex-row justify-between items-center cursor-pointer gap-1 w-full px-3 py-2 border rounded-full font-lato text-white",
           eventTypeToColor[cityEvent.type],
         )}
         style={{ height: 30 + duration * 15 }}
         onClick={toggleDrawer(true)}
       >
-        <div className="flex flex-row gap-2 text-sm w-40 items-center font-bold">
-          <span className="">
-            {cityEvent.start && getTime(cityEvent.start)}
-          </span>
-          <span>-</span>
-          <span>{cityEvent.end && getTime(cityEvent.end)}</span>
-        </div>
+        {!hideTime && (
+          <div className="flex flex-row gap-2 text-sm min-w-fit items-center font-bold">
+            <span className="">
+              {cityEvent.start && getTime(cityEvent.start)}
+            </span>
+            <span>-</span>
+            <span>{cityEvent.end && getTime(cityEvent.end)}</span>
+          </div>
+        )}
 
-        <span className="text-xs">{cityEvent.title}</span>
+        <span className="text-sm truncate text-center w-full">
+          {cityEvent.title}
+        </span>
       </button>
       <Drawer
         open={open}

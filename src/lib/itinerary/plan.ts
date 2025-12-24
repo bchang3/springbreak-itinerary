@@ -1,6 +1,6 @@
 export interface DayPlan {
   date: Date;
-  events: CityEvent[];
+  events: CityEvent[][];
 }
 
 export interface Plan {
@@ -96,6 +96,17 @@ const barceloneta: CityEvent = {
   start: new Date(2026, 2, 14, 19),
   end: new Date(2026, 2, 14, 20),
 };
+const barcelonaPickup: CityEvent = {
+  title: "Pickup Soccer (optional)",
+  city: "Barcelona",
+  imageLink:
+    "https://media.coliseum-online.com/2025/08/Coliseum-GSVA-News-Barcelona-receives-approval-to-open-stadium.webp",
+  type: "activities",
+  description:
+    "Pickup soccer is easy to find in Barcelona, especially in parks, beaches, and small turf fields around the city. Games are informal and welcoming, with locals and travelers mixing in. It’s a fun, active way to break up sightseeing and experience the city like a local.",
+  start: new Date(2026, 2, 16, 8),
+  end: new Date(2026, 2, 16, 10),
+};
 const montjuicHill: CityEvent = {
   title: "Montjuïc Hill",
   city: "Barcelona",
@@ -104,6 +115,8 @@ const montjuicHill: CityEvent = {
   type: "nature",
   description:
     "Montjuïc Hill overlooks the city and harbor with parks, gardens, and historic sites to explore. Ride the cable car for panoramic views or visit the castle on top. It’s a calming outdoor escape with sunsets worth lingering for.",
+  start: new Date(2026, 2, 14, 20),
+  end: new Date(2026, 2, 14, 21),
 };
 const ciutadellaPark: CityEvent = {
   title: "Ciutadella Park",
@@ -171,8 +184,8 @@ const elBorn: CityEvent = {
   type: "nightlife",
   description:
     "El Born mixes history with trendy boutiques and buzzing cafes. Wander its narrow lanes, discover artisanal shops, and stop for tapas or drinks. It’s one of the city’s most dynamic and walkable neighborhoods.",
-  start: new Date(2026, 2, 14, 20),
-  end: new Date(2026, 2, 14, 21),
+  start: new Date(2026, 2, 15, 15),
+  end: new Date(2026, 2, 15, 15, 30),
 };
 const portAventura: CityEvent = {
   title: "PortAventura Park",
@@ -213,6 +226,8 @@ const delPradoMuseum: CityEvent = {
   type: "sightseeing",
   description:
     "The Prado is one of Europe’s premier art museums, home to works by Velázquez, Goya, and Bosch. The galleries are large but well-organized, making it easy to focus on highlights. Even a short visit leaves a strong impression.",
+  start: new Date(2026, 2, 18, 14),
+  end: new Date(2026, 2, 18, 17),
 };
 
 const palacioMadrid: CityEvent = {
@@ -223,6 +238,8 @@ const palacioMadrid: CityEvent = {
   type: "sightseeing",
   description:
     "The Royal Palace showcases Madrid’s grandeur through massive halls, detailed ceilings, and formal gardens. It’s still used for state ceremonies, giving it a lived-in feel despite its scale. Views toward the city add to the experience.",
+  start: new Date(2026, 2, 18, 12),
+  end: new Date(2026, 2, 18, 14),
 };
 const madridBotanico: CityEvent = {
   title: "Real Jardín Botánico",
@@ -235,13 +252,15 @@ const madridBotanico: CityEvent = {
 };
 
 const bernabeu: CityEvent = {
-  title: "Estadio Santiago Bernabéu Tour",
+  title: "Estadio Santiago Bernabéu Tour (optional)",
   city: "Madrid",
   imageLink:
     "https://upload.wikimedia.org/wikipedia/commons/0/0e/Estadio_Santiago_Bernab%C3%A9u_Madrid.jpg",
   type: "activities",
   description:
     "The Bernabéu tour gives behind-the-scenes access to one of football’s most famous stadiums. Walk through the stands, locker rooms, and trophy displays. It’s a must for sports fans and surprisingly engaging even for casual visitors.",
+  start: new Date(2026, 2, 19, 9),
+  end: new Date(2026, 2, 19, 11),
 };
 const buenRetiroPark: CityEvent = {
   title: "Parque del Buen Retiro",
@@ -251,15 +270,19 @@ const buenRetiroPark: CityEvent = {
   type: "nature",
   description:
     "Retiro Park is Madrid’s favorite green space, with wide paths, gardens, and a central lake. Rent a rowboat, relax on the grass, or walk past street performers. It’s an easy place to spend an unplanned afternoon.",
+  start: new Date(2026, 2, 15, 16, 30),
+  end: new Date(2026, 2, 15, 17, 45),
 };
 const gokarting: CityEvent = {
-  title: "Go-Karting Experience",
+  title: "Go-Karting",
   city: "Madrid",
   imageLink:
     "https://offloadmedia.feverup.com/madridsecreto.co/wp-content/uploads/2022/12/27165528/shutterstock_2171045113-1-1024x683.jpg",
   type: "activities",
   description:
     "Go-kart tracks around Madrid offer a high-energy break from sightseeing. Races are short, competitive, and easy to jump into. It’s a fun group activity that doesn’t require much planning.",
+  start: new Date(2026, 2, 18, 12),
+  end: new Date(2026, 2, 18, 14),
 };
 const goldMadrid: CityEvent = {
   title: "Golf in Madrid",
@@ -286,6 +309,8 @@ const cookingClass: CityEvent = {
   type: "food",
   description:
     "Hands-on cooking classes focus on classic Spanish dishes like paella and traditional tapas. You’ll cook, eat, and usually share wine with the group. It’s social, casual, and surprisingly fun.",
+  start: new Date(2026, 2, 18, 17, 30),
+  end: new Date(2026, 2, 18, 20, 30),
 };
 const mercadoSanMiguel: CityEvent = {
   title: "Mercado de San Miguel",
@@ -295,6 +320,8 @@ const mercadoSanMiguel: CityEvent = {
   type: "food",
   description:
     "This historic food hall is packed with tapas counters, wine stalls, and desserts. It’s best for grazing rather than full meals. The atmosphere stays lively well into the evening.",
+  start: new Date(2026, 2, 17, 19, 30),
+  end: new Date(2026, 2, 17, 20, 30),
 };
 const sanGinesChurros: CityEvent = {
   title: "Chocolatería San Ginés",
@@ -322,6 +349,8 @@ const plazaCibelesAndMayor: CityEvent = {
   type: "sightseeing",
   description:
     "These two plazas show different sides of Madrid, from grand civic architecture to historic public space. Both are easy to reach on foot. They’re especially atmospheric in the evening.",
+  start: new Date(2026, 2, 16, 19, 30),
+  end: new Date(2026, 2, 16, 20),
 };
 const granVia: CityEvent = {
   title: "Gran Vía",
@@ -331,7 +360,22 @@ const granVia: CityEvent = {
   type: "sightseeing",
   description:
     "Gran Vía is Madrid’s main artery, lined with theaters, shops, and classic facades. It’s busy at all hours and well-lit at night. Walking it gives a good sense of the city’s scale and energy.",
+  start: new Date(2026, 2, 16, 20),
+  end: new Date(2026, 2, 16, 20, 30),
 };
+
+const madridZoo: CityEvent = {
+  title: "Zoo Aquarium de Madrid",
+  city: "Madrid",
+  imageLink:
+    "https://www.zoomadrid.com/content/dam/zoo/images/animals/panda-rojo/Panda-rojo-Zoo-Madrid-main.jpg",
+  type: "activities",
+  description:
+    "Explore a world of wildlife and marine life at Zoo Aquarium de Madrid, where animals from five continents live across varied habitats. You can see giants like giraffes, elephants, lions, and gorillas alongside unique species such as giant pandas, koalas, and red pandas, as well as underwater life like sharks, stingrays, and colorful reef fish in the aquarium. It’s a relaxed, engaging way to see a huge range of creatures in one place — perfect for animal lovers and curious travelers alike.",
+  start: new Date(2026, 2, 17, 13),
+  end: new Date(2026, 2, 17, 17),
+};
+
 const puertaDelSol: CityEvent = {
   title: "Puerta del Sol",
   city: "Madrid",
@@ -340,6 +384,8 @@ const puertaDelSol: CityEvent = {
   type: "sightseeing",
   description:
     "Puerta del Sol marks the symbolic center of Spain. Crowds come and go constantly, making it feel alive at all times. It’s a common meeting point before heading out.",
+  start: new Date(2026, 2, 15, 17, 45),
+  end: new Date(2026, 2, 15, 18),
 };
 const warnerBrosPark: CityEvent = {
   title: "Parque Warner Madrid",
@@ -349,6 +395,8 @@ const warnerBrosPark: CityEvent = {
   type: "activities",
   description:
     "Parque Warner offers roller coasters, shows, and themed zones just outside the city. It’s a full-day commitment but delivers high-energy fun. Best for groups wanting a break from urban exploring.",
+  start: new Date(2026, 2, 18, 14),
+  end: new Date(2026, 2, 18, 17),
 };
 const madridBarHopping: CityEvent = {
   title: "Bar Hopping: Malasaña → Chueca → Gran Vía",
@@ -387,6 +435,8 @@ const sevilleCathedralAndLaGiralda: CityEvent = {
   type: "sightseeing",
   description:
     "Seville Cathedral is massive and surprisingly atmospheric, with Columbus’s tomb inside. La Giralda’s ramped climb leads to wide views over the city. It’s an easy landmark to build the day around.",
+  start: new Date(2026, 2, 20, 14),
+  end: new Date(2026, 2, 20, 15),
 };
 const plazaEspanaSeville: CityEvent = {
   title: "Plaza de España",
@@ -396,6 +446,8 @@ const plazaEspanaSeville: CityEvent = {
   type: "sightseeing",
   description:
     "Plaza de España is an open, curved plaza with canals, bridges, and tiled alcoves representing Spain’s regions. It’s spacious and relaxed despite its scale. Late afternoon light works best here.",
+  start: new Date(2026, 2, 20, 13, 30),
+  end: new Date(2026, 2, 20, 14),
 };
 const santaCruzSeville: CityEvent = {
   title: "Barrio Santa Cruz",
@@ -423,6 +475,8 @@ const mariaLusiaSeville: CityEvent = {
   type: "nature",
   description:
     "This large park next to Plaza de España provides shade, fountains, and quiet paths. It’s ideal for slowing the pace between sightseeing stops. Easy to enter and exit without planning.",
+  start: new Date(2026, 2, 20, 12, 30),
+  end: new Date(2026, 2, 20, 13, 30),
 };
 const guadalquivirRiver: CityEvent = {
   title: "Guadalquivir River Walk & Cruise",
@@ -432,6 +486,8 @@ const guadalquivirRiver: CityEvent = {
   type: "nature",
   description:
     "Walking or cruising along the Guadalquivir River is flat, scenic, and especially good near sunset. Bridges and historic buildings line the water, giving great views from either perspective. It’s a relaxed way to shift from daytime sightseeing into evening plans.",
+  start: new Date(2026, 2, 20, 16),
+  end: new Date(2026, 2, 20, 18),
 };
 
 const metropolParasol: CityEvent = {
@@ -461,6 +517,8 @@ const flamencoSeville: CityEvent = {
   type: "nightlife",
   description:
     "Flamenco in Seville is intense, close-up, and emotional. Performances are usually compact and high-energy. It’s an easy cultural add-on to an evening out.",
+  start: new Date(2026, 2, 19, 20),
+  end: new Date(2026, 2, 19, 21),
 };
 
 const alamedaHercules: CityEvent = {
@@ -481,6 +539,8 @@ const terrazaBar: CityEvent = {
   type: "nightlife",
   description:
     "This rooftop bar offers close-up views of the cathedral and a refined but relaxed setting. It’s popular for sunset cocktails. Best treated as a short stop before heading elsewhere.",
+  start: new Date(2026, 2, 20, 20),
+  end: new Date(2026, 2, 20, 21),
 };
 
 const salaCosmos: CityEvent = {
@@ -501,6 +561,8 @@ const mezquitaCathedral: CityEvent = {
   type: "sightseeing",
   description:
     "The Mezquita–Catedral is Córdoba’s defining landmark, known for its rows of red-and-white arches and layered history. Walking through it feels immersive and slightly surreal. Even a short visit leaves a lasting impression.",
+  start: new Date(2026, 2, 19, 14),
+  end: new Date(2026, 2, 19, 14, 30),
 };
 const jewishQuarter: CityEvent = {
   title: "La Judería (Jewish Quarter)",
@@ -537,26 +599,52 @@ const cordobaFood: CityEvent = {
   type: "food",
   description:
     "A quick stop for local dishes like salmorejo or flamenquín adds flavor without slowing your schedule. Many casual spots are clustered near the historic center. Ideal for a short, efficient break.",
+  start: new Date(2026, 2, 19, 14, 30),
+  end: new Date(2026, 2, 19, 15, 30),
 };
 
-const fridayPadding13: CityEvent = {
-  title: "Padding",
+const barcelonaBrunch: CityEvent = {
+  title: "Brunch in Barcelona",
   city: "Barcelona",
-  imageLink: "",
-  type: "empty",
-  description: "",
-  start: new Date(2026, 2, 13, 8),
-  end: new Date(2026, 2, 13, 18),
+  imageLink: "https://media.timeout.com/images/105994392/image.jpg",
+  type: "food",
+  description:
+    "Brunch in Barcelona blends laid-back mornings with creative flavors, from classic eggs and avocado to Mediterranean-inspired plates. Many cafés around El Born, Gràcia, and the beach offer relaxed outdoor seating perfect for people-watching. It’s a great way to ease into the day before exploring or heading to the beach.",
+  start: new Date(2026, 2, 16, 10),
+  end: new Date(2026, 2, 16, 12),
 };
 
 const madridBarcaTrain: CityEvent = {
   title: "Train from Barcelona - Madrid",
   city: "Barcelona",
-  imageLink: "https://media.cntraveler.com/photos/68ac749c71f7633489ed72c8/16:9/w_2560%2Cc_limit/082525-Al%2520Andalus-PR-Global-Al%2520Andalus%2520-%2520Olivos%2520en%2520Linares%252002.jpg",
+  imageLink:
+    "https://media.cntraveler.com/photos/68ac749c71f7633489ed72c8/16:9/w_2560%2Cc_limit/082525-Al%2520Andalus-PR-Global-Al%2520Andalus%2520-%2520Olivos%2520en%2520Linares%252002.jpg",
   type: "train",
   description: "Travel from Barcelona to Madrid (~ 3 hours)",
-  start: new Date(2026, 2, 16, 12),
-  end: new Date(2026, 2, 16, 15),
+  start: new Date(2026, 2, 16, 12, 30),
+  end: new Date(2026, 2, 16, 15, 30),
+};
+
+const madridCordobaTrain: CityEvent = {
+  title: "Train from Madrid - Cordoba",
+  city: "Barcelona",
+  imageLink:
+    "https://media.cntraveler.com/photos/68ac749c71f7633489ed72c8/16:9/w_2560%2Cc_limit/082525-Al%2520Andalus-PR-Global-Al%2520Andalus%2520-%2520Olivos%2520en%2520Linares%252002.jpg",
+  type: "train",
+  description: "Travel from Madrid to Cordoba (~ 2 hours)",
+  start: new Date(2026, 2, 19, 12),
+  end: new Date(2026, 2, 19, 14),
+};
+
+const cordobaSevilleTrain: CityEvent = {
+  title: "Train from Cordoba - Seville",
+  city: "Barcelona",
+  imageLink:
+    "https://media.cntraveler.com/photos/68ac749c71f7633489ed72c8/16:9/w_2560%2Cc_limit/082525-Al%2520Andalus-PR-Global-Al%2520Andalus%2520-%2520Olivos%2520en%2520Linares%252002.jpg",
+  type: "train",
+  description: "Travel from Cordoba to Seville (~ 1 hours)",
+  start: new Date(2026, 2, 19, 16),
+  end: new Date(2026, 2, 19, 17),
 };
 
 export const cities: City[] = [
@@ -651,24 +739,61 @@ export const plan: Plan = {
     { date: new Date(2026, 2, 13), events: [] },
     {
       date: new Date(2026, 2, 14),
-      events: [fridayPadding13, portVell, barceloneta, elBorn],
+      events: [[portVell], [barceloneta], [montjuicHill]],
     },
     {
       date: new Date(2026, 2, 15),
       events: [
-        sagradaFamilia,
-        plazaCatalunya,
-        gothicQuarter,
-        ciutadellaPark,
-        laBoqueria,
-        barcaGame,
+        [sagradaFamilia],
+        [plazaCatalunya],
+        [gothicQuarter],
+        [elBorn],
+        [ciutadellaPark],
+        [laBoqueria],
+        [barcaGame],
       ],
     },
-    { date: new Date(2026, 2, 16), events: [madridBarcaTrain] },
-    { date: new Date(2026, 2, 17), events: [] },
-    { date: new Date(2026, 2, 18), events: [] },
-    { date: new Date(2026, 2, 19), events: [] },
-    { date: new Date(2026, 2, 20), events: [] },
+    {
+      date: new Date(2026, 2, 16),
+      events: [
+        [barcelonaPickup],
+        [barcelonaBrunch],
+        [madridBarcaTrain],
+        [buenRetiroPark],
+        [puertaDelSol],
+        [plazaCibelesAndMayor],
+        [granVia],
+      ],
+    },
+    { date: new Date(2026, 2, 17), events: [[madridZoo], [mercadoSanMiguel]] },
+    {
+      date: new Date(2026, 2, 18),
+      events: [
+        [palacioMadrid, gokarting],
+        [delPradoMuseum, warnerBrosPark],
+        [cookingClass],
+      ],
+    },
+    {
+      date: new Date(2026, 2, 19),
+      events: [
+        [bernabeu],
+        [madridCordobaTrain],
+        [mezquitaCathedral],
+        [cordobaSevilleTrain],
+        [flamencoSeville],
+      ],
+    },
+    {
+      date: new Date(2026, 2, 20),
+      events: [
+        [mariaLusiaSeville],
+        [plazaEspanaSeville],
+        [sevilleCathedralAndLaGiralda],
+        [guadalquivirRiver],
+        [terrazaBar],
+      ],
+    },
     { date: new Date(2026, 2, 21), events: [] },
   ],
 };

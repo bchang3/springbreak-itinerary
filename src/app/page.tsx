@@ -1,6 +1,6 @@
 import EventTag from "@/lib/components/EventTag";
 import { plan } from "@/lib/itinerary/plan";
-import { getWeekdayShort } from "@/lib/utils/utils";
+import { cn, getWeekdayShort } from "@/lib/utils/utils";
 
 export default function Home() {
   return (
@@ -14,11 +14,11 @@ export default function Home() {
       </div>
       <div className="p-6">
         <h1 className="font-cinzel text-5xl font-semibold mb-2">March</h1>
-        <div className="flex flex-row gap-4 w-full h-120 p-4 overflow-scroll">
+        <div className="flex flex-row gap-4 w-full h-130 p-4 overflow-scroll">
           {plan.days.map((dayPlan) => {
             return (
               <div
-                className="flex flex-col flex-1 gap-2 relative min-w-100 border p-4 rounded-2xl h-110 hover:scale-103 transition-all"
+                className="flex flex-col flex-1 gap-2 relative min-w-100 w-100 border p-4 rounded-2xl h-120 hover:scale-103 transition-all"
                 key={dayPlan.date.toString()}
               >
                 <div>
@@ -27,9 +27,32 @@ export default function Home() {
                   </p>
                   <hr />
                 </div>
-                <div className="flex flex-col gap-2">
-                  {dayPlan.events.map((ev) => {
-                    return <EventTag cityEvent={ev} key={ev.title} />;
+                <div className="flex flex-col h-full gap-2 justify-center w-full">
+                  {dayPlan.events.map((events) => {
+                    if (events[0].start)
+                      return (
+                        <div
+                          key={events[0].start.getTime()}
+                          className={cn("flex flex-row gap-1")}
+                        >
+                          {events.map((ev, i) => {
+                            return (
+                              <div
+                                key={ev.title}
+                                className={
+                                  events.length > 1
+                                    ? i > 0
+                                      ? "w-2/5"
+                                      : "w-3/5"
+                                    : "w-full"
+                                }
+                              >
+                                <EventTag cityEvent={ev} hideTime={i > 0} />
+                              </div>
+                            );
+                          })}
+                        </div>
+                      );
                   })}
                 </div>
               </div>
