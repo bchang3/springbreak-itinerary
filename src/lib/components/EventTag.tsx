@@ -63,7 +63,7 @@ export default function EventTag({ cityEvent, hideTime }: EventTagProps) {
         BackdropProps={{ invisible: true }}
       >
         <Box
-          className="flex flex-col bg-white w-90 gap-4 p-4"
+          className="flex flex-col bg-white w-70 md:w-90 gap-4 p-4"
           onClick={toggleDrawer(false)}
         >
           <div className="flex flex-col">
