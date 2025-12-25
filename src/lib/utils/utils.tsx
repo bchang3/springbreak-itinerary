@@ -34,7 +34,7 @@ export function getMonthAndWeekDay(date: Date): string {
     timeZone: "UTC",
   }).format(date);
 
-  const day = date.getDate();
+  const day = date.getUTCDate();
   const ordinal = getOrdinal(day);
 
   return `${weekday}, ${month} ${day}${ordinal}`;

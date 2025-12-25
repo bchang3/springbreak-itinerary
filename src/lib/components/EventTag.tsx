@@ -1,13 +1,13 @@
 "use client";
 import { useState } from "react";
-import { CityEvent } from "../itinerary/plan";
+import { ItineraryEvent } from "../itinerary/plan";
 import { cn, getMonthAndWeekDay, getTime } from "../utils/utils";
-
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
+import { MouseEvent } from "react";
 
 interface EventTagProps {
-  cityEvent: CityEvent;
+  cityEvent: ItineraryEvent;
   hideTime?: boolean;
 }
 export default function EventTag({ cityEvent, hideTime }: EventTagProps) {
@@ -17,8 +17,18 @@ export default function EventTag({ cityEvent, hideTime }: EventTagProps) {
     setOpen(newOpen);
   };
 
+  const handleEventClick = (e: MouseEvent<HTMLButtonElement>) => {
+    e.stopPropagation();
+    setOpen(true);
+  };
+
+  const handleEventClickClose = (e: MouseEvent<HTMLDivElement>) => {
+    e.stopPropagation();
+    setOpen(false);
+  };
+
   const eventTypeToColor = {
-    nightlife: "bg-[#0072b0]",
+    nightlife: "bg-red-950",
     food: "bg-[#edb200]",
     activities: "bg-[#00aab0]",
     nature: "bg-[#00b04f]",
@@ -37,10 +47,10 @@ export default function EventTag({ cityEvent, hideTime }: EventTagProps) {
       <button
         className={cn(
           "flex flex-row justify-between items-center cursor-pointer gap-1 w-full px-3 py-2 border rounded-4xl font-lato text-white",
-          eventTypeToColor[cityEvent.type],
+          eventTypeToColor[cityEvent.event.type],
         )}
         style={{ height: Math.min(30 + duration * 15, 250) }}
-        onClick={cityEvent.type != "empty" ? toggleDrawer(true) : () => {}}
+        onClick={cityEvent.event.type != "empty" ? handleEventClick : () => {}}
       >
         {!hideTime && (
           <div className="flex flex-row gap-2 text-sm min-w-fit items-center font-bold">
@@ -53,7 +63,7 @@ export default function EventTag({ cityEvent, hideTime }: EventTagProps) {
         )}
 
         <span className="text-sm truncate text-center w-full">
-          {cityEvent.title}
+          {cityEvent.event.title}
         </span>
       </button>
       <Drawer
@@ -62,14 +72,15 @@ export default function EventTag({ cityEvent, hideTime }: EventTagProps) {
         anchor="right"
         disableScrollLock
         BackdropProps={{ invisible: true }}
+        onClick={handleEventClickClose}
       >
         <Box
           className="flex flex-col bg-white w-70 md:w-90 gap-4 p-4"
-          onClick={toggleDrawer(false)}
+          onClick={handleEventClickClose}
         >
           <div className="flex flex-col">
             <span className="font-cinzel text-xl font-bold">
-              {cityEvent.title}
+              {cityEvent.event.title}
             </span>
             <div className="flex flex-col">
               <span className="text-sm">
@@ -83,13 +94,13 @@ export default function EventTag({ cityEvent, hideTime }: EventTagProps) {
           </div>
           <div className="flex-1 overflow-hidden rounded-sm">
             <img
-              src={cityEvent.imageLink}
-              alt={cityEvent.title}
+              src={cityEvent.event.imageLink}
+              alt={cityEvent.event.title}
               className="w-full h-full object-cover object-center"
             />
           </div>
           <p className=" font-lato text-gray-700 leading-relaxed overflow-auto text-base">
-            {cityEvent.description}
+            {cityEvent.event.description}
           </p>
         </Box>
       </Drawer>

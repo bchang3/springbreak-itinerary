@@ -1,8 +1,13 @@
 export interface DayPlan {
   date: Date;
-  events: CityEvent[][];
+  events: ItineraryEvent[][];
+  nightEvents: ItineraryEvent[][];
 }
-
+export interface ItineraryEvent {
+  event: CityEvent;
+  start: Date;
+  end: Date;
+}
 export interface Plan {
   days: DayPlan[];
 }
@@ -24,8 +29,6 @@ export interface CityEvent {
   type: EventType;
   imageLink: string;
   description: string;
-  start?: Date;
-  end?: Date;
 }
 export interface City {
   name: string;
@@ -42,8 +45,6 @@ const sagradaFamilia: CityEvent = {
   type: "sightseeing",
   description:
     "Antoni Gaudí’s unfinished basilica is one of Barcelona’s most iconic landmarks, blending Gothic and Art Nouveau styles. Its soaring facades and stunning interior light make it a must‑see for any visitor. Book ahead to skip lines and catch the best views.",
-  start: new Date(Date.UTC(2026, 2, 15, 10)),
-  end: new Date(Date.UTC(2026, 2, 15, 11, 30)),
 };
 
 const barcaGame: CityEvent = {
@@ -54,8 +55,6 @@ const barcaGame: CityEvent = {
   type: "activities",
   description:
     "Catch the electric atmosphere of a La Liga match at Camp Nou on March 15th, as Barcelona takes on Seville. The roar of tens of thousands of fans brings a thrilling energy unique to Spanish football. It’s an unforgettable cultural and sporting experience.",
-  start: new Date(Date.UTC(2026, 2, 15, 21)),
-  end: new Date(Date.UTC(2026, 2, 15, 23)),
 };
 const gothicQuarter: CityEvent = {
   title: "Gothic Quarter",
@@ -65,8 +64,6 @@ const gothicQuarter: CityEvent = {
   type: "sightseeing",
   description:
     "Wander the maze of narrow streets in the historic Gothic Quarter, where medieval buildings hide lively plazas. Street performers, hidden cafes, and timeless architecture make every turn feel like discovery. It’s perfect for a relaxed afternoon of exploring.",
-  start: new Date(Date.UTC(2026, 2, 15, 14)),
-  end: new Date(Date.UTC(2026, 2, 15, 15, 30)),
 };
 const placaReial: CityEvent = {
   title: "Plaça Reial",
@@ -94,8 +91,6 @@ const barceloneta: CityEvent = {
   type: "nature",
   description:
     "Barceloneta Beach is the heart of Barcelona’s seaside vibe, with wide sandy shores and lively promenade bars. Even in cooler months, it’s great for strolling and drinks with a view. Sunset here is one of the city’s most social daily rituals.",
-  start: new Date(Date.UTC(2026, 2, 14, 19)),
-  end: new Date(Date.UTC(2026, 2, 14, 20)),
 };
 const barcelonaPickup: CityEvent = {
   title: "Pickup Soccer (optional)",
@@ -105,8 +100,6 @@ const barcelonaPickup: CityEvent = {
   type: "activities",
   description:
     "Pickup soccer is easy to find in Barcelona, especially in parks, beaches, and small turf fields around the city. Games are informal and welcoming, with locals and travelers mixing in. It’s a fun, active way to break up sightseeing and experience the city like a local.",
-  start: new Date(Date.UTC(2026, 2, 16, 8)),
-  end: new Date(Date.UTC(2026, 2, 16, 10)),
 };
 const montjuicHill: CityEvent = {
   title: "Montjuïc Hill",
@@ -116,8 +109,6 @@ const montjuicHill: CityEvent = {
   type: "nature",
   description:
     "Montjuïc Hill overlooks the city and harbor with parks, gardens, and historic sites to explore. Ride the cable car for panoramic views or visit the castle on top. It’s a calming outdoor escape with sunsets worth lingering for.",
-  start: new Date(Date.UTC(2026, 2, 14, 20)),
-  end: new Date(Date.UTC(2026, 2, 14, 21)),
 };
 const ciutadellaPark: CityEvent = {
   title: "Ciutadella Park",
@@ -127,8 +118,6 @@ const ciutadellaPark: CityEvent = {
   type: "nature",
   description:
     "Ciutadella Park is Barcelona’s green heart, filled with fountains, sculptures, and wide tree-lined paths. It’s perfect for a relaxed stroll, a picnic, or people-watching near the lake. You can rent a rowboat, visit the small zoo, or simply enjoy the open space away from the city bustle.",
-  start: new Date(Date.UTC(2026, 2, 15, 15, 30)),
-  end: new Date(Date.UTC(2026, 2, 15, 17)),
 };
 const montserrat: CityEvent = {
   title: "Montserrat & Mountain Biking",
@@ -147,8 +136,6 @@ const plazaCatalunya: CityEvent = {
   type: "sightseeing",
   description:
     "Plaça de Catalunya sits at the crossroads of Barcelona’s old city and modern avenues. It’s a natural meeting point, surrounded by shops, cafés, and constant movement. From here, it’s easy to head toward the Gothic Quarter, El Born, or down La Rambla.",
-  start: new Date(Date.UTC(2026, 2, 15, 13, 30)),
-  end: new Date(Date.UTC(2026, 2, 15, 14)),
 };
 
 const flamencoBarca: CityEvent = {
@@ -170,7 +157,7 @@ const jazzBarca: CityEvent = {
     "Barcelona’s jazz scene thrives in cozy clubs tucked into the old city and Eixample. Catch live sets from local and international musicians. Sip wine, relax, and enjoy world-class improvisation in a chilled atmosphere.",
 };
 const barcaRooftop: CityEvent = {
-  title: "Rooftop Bars",
+  title: "Barcelona Rooftop Bars",
   city: "Barcelona",
   imageLink: "https://media.timeout.com/images/105909905/image.jpg",
   type: "nightlife",
@@ -185,8 +172,6 @@ const elBorn: CityEvent = {
   type: "nightlife",
   description:
     "El Born mixes history with trendy boutiques and buzzing cafes. Wander its narrow lanes, discover artisanal shops, and stop for tapas or drinks. It’s one of the city’s most dynamic and walkable neighborhoods.",
-  start: new Date(Date.UTC(2026, 2, 15, 15)),
-  end: new Date(Date.UTC(2026, 2, 15, 15, 30)),
 };
 const portAventura: CityEvent = {
   title: "PortAventura Park",
@@ -204,8 +189,6 @@ const portVell: CityEvent = {
   type: "sightseeing",
   description:
     "Port Vell’s marina area blends scenic waterfront promenades with lively restaurants and bars. Watch boats bobbing against the backdrop of the city at sunset. It’s a great place for a leisurely stroll or seaside drink.",
-  start: new Date(Date.UTC(2026, 2, 14, 18)),
-  end: new Date(Date.UTC(2026, 2, 14, 19)),
 };
 const laBoqueria: CityEvent = {
   title: "La Boqueria Market",
@@ -215,8 +198,6 @@ const laBoqueria: CityEvent = {
   type: "food",
   description:
     "La Boqueria is Barcelona’s famous food market, teeming with fresh produce, tapas stands, and local flavors. Sample jamón, seafood, and fresh juice as you wander vibrant stalls. It’s a delicious snapshot of Catalan cuisine.",
-  start: new Date(Date.UTC(2026, 2, 15, 17)),
-  end: new Date(Date.UTC(2026, 2, 15, 18)),
 };
 
 const delPradoMuseum: CityEvent = {
@@ -227,8 +208,6 @@ const delPradoMuseum: CityEvent = {
   type: "sightseeing",
   description:
     "The Prado is one of Europe’s premier art museums, home to works by Velázquez, Goya, and Bosch. The galleries are large but well-organized, making it easy to focus on highlights. Even a short visit leaves a strong impression.",
-  start: new Date(Date.UTC(2026, 2, 18, 14)),
-  end: new Date(Date.UTC(2026, 2, 18, 17)),
 };
 
 const palacioMadrid: CityEvent = {
@@ -239,8 +218,6 @@ const palacioMadrid: CityEvent = {
   type: "sightseeing",
   description:
     "The Royal Palace showcases Madrid’s grandeur through massive halls, detailed ceilings, and formal gardens. It’s still used for state ceremonies, giving it a lived-in feel despite its scale. Views toward the city add to the experience.",
-  start: new Date(Date.UTC(2026, 2, 18, 12)),
-  end: new Date(Date.UTC(2026, 2, 18, 14)),
 };
 const madridBotanico: CityEvent = {
   title: "Real Jardín Botánico",
@@ -260,8 +237,6 @@ const bernabeu: CityEvent = {
   type: "activities",
   description:
     "The Bernabéu tour gives behind-the-scenes access to one of football’s most famous stadiums. Walk through the stands, locker rooms, and trophy displays. It’s a must for sports fans and surprisingly engaging even for casual visitors.",
-  start: new Date(Date.UTC(2026, 2, 19, 9)),
-  end: new Date(Date.UTC(2026, 2, 19, 11)),
 };
 const buenRetiroPark: CityEvent = {
   title: "Parque del Buen Retiro",
@@ -271,8 +246,6 @@ const buenRetiroPark: CityEvent = {
   type: "nature",
   description:
     "Retiro Park is Madrid’s favorite green space, with wide paths, gardens, and a central lake. Rent a rowboat, relax on the grass, or walk past street performers. It’s an easy place to spend an unplanned afternoon.",
-  start: new Date(Date.UTC(2026, 2, 15, 16, 30)),
-  end: new Date(Date.UTC(2026, 2, 15, 17, 45)),
 };
 const gokarting: CityEvent = {
   title: "Go-Karting",
@@ -282,8 +255,6 @@ const gokarting: CityEvent = {
   type: "activities",
   description:
     "Go-kart tracks around Madrid offer a high-energy break from sightseeing. Races are short, competitive, and easy to jump into. It’s a fun group activity that doesn’t require much planning.",
-  start: new Date(Date.UTC(2026, 2, 18, 12)),
-  end: new Date(Date.UTC(2026, 2, 18, 14)),
 };
 const goldMadrid: CityEvent = {
   title: "Golf in Madrid",
@@ -310,8 +281,6 @@ const cookingClass: CityEvent = {
   type: "food",
   description:
     "Hands-on cooking classes focus on classic Spanish dishes like paella and traditional tapas. You’ll cook, eat, and usually share wine with the group. It’s social, casual, and surprisingly fun.",
-  start: new Date(Date.UTC(2026, 2, 18, 17, 30)),
-  end: new Date(Date.UTC(2026, 2, 18, 20, 30)),
 };
 const mercadoSanMiguel: CityEvent = {
   title: "Mercado de San Miguel",
@@ -321,8 +290,6 @@ const mercadoSanMiguel: CityEvent = {
   type: "food",
   description:
     "This historic food hall is packed with tapas counters, wine stalls, and desserts. It’s best for grazing rather than full meals. The atmosphere stays lively well into the evening.",
-  start: new Date(Date.UTC(2026, 2, 17, 19, 30)),
-  end: new Date(Date.UTC(2026, 2, 17, 20, 30)),
 };
 const sanGinesChurros: CityEvent = {
   title: "Chocolatería San Ginés",
@@ -350,8 +317,6 @@ const plazaCibelesAndMayor: CityEvent = {
   type: "sightseeing",
   description:
     "These two plazas show different sides of Madrid, from grand civic architecture to historic public space. Both are easy to reach on foot. They’re especially atmospheric in the evening.",
-  start: new Date(Date.UTC(2026, 2, 16, 19, 30)),
-  end: new Date(Date.UTC(2026, 2, 16, 20)),
 };
 const granVia: CityEvent = {
   title: "Gran Vía",
@@ -361,8 +326,6 @@ const granVia: CityEvent = {
   type: "sightseeing",
   description:
     "Gran Vía is Madrid’s main artery, lined with theaters, shops, and classic facades. It’s busy at all hours and well-lit at night. Walking it gives a good sense of the city’s scale and energy.",
-  start: new Date(Date.UTC(2026, 2, 16, 20)),
-  end: new Date(Date.UTC(2026, 2, 16, 20, 30)),
 };
 
 const madridZoo: CityEvent = {
@@ -373,8 +336,6 @@ const madridZoo: CityEvent = {
   type: "activities",
   description:
     "Explore a world of wildlife and marine life at Zoo Aquarium de Madrid, where animals from five continents live across varied habitats. You can see giants like giraffes, elephants, lions, and gorillas alongside unique species such as giant pandas, koalas, and red pandas, as well as underwater life like sharks, stingrays, and colorful reef fish in the aquarium. It’s a relaxed, engaging way to see a huge range of creatures in one place — perfect for animal lovers and curious travelers alike.",
-  start: new Date(Date.UTC(2026, 2, 17, 13)),
-  end: new Date(Date.UTC(2026, 2, 17, 17)),
 };
 
 const puertaDelSol: CityEvent = {
@@ -385,8 +346,6 @@ const puertaDelSol: CityEvent = {
   type: "sightseeing",
   description:
     "Puerta del Sol marks the symbolic center of Spain. Crowds come and go constantly, making it feel alive at all times. It’s a common meeting point before heading out.",
-  start: new Date(Date.UTC(2026, 2, 15, 17, 45)),
-  end: new Date(Date.UTC(2026, 2, 15, 18)),
 };
 const warnerBrosPark: CityEvent = {
   title: "Parque Warner Madrid",
@@ -396,8 +355,6 @@ const warnerBrosPark: CityEvent = {
   type: "activities",
   description:
     "Parque Warner offers roller coasters, shows, and themed zones just outside the city. It’s a full-day commitment but delivers high-energy fun. Best for groups wanting a break from urban exploring.",
-  start: new Date(Date.UTC(2026, 2, 18, 14)),
-  end: new Date(Date.UTC(2026, 2, 18, 17)),
 };
 const madridBarHopping: CityEvent = {
   title: "Bar Hopping: Malasaña → Chueca → Gran Vía",
@@ -436,8 +393,6 @@ const sevilleCathedralAndLaGiralda: CityEvent = {
   type: "sightseeing",
   description:
     "Seville Cathedral is massive and surprisingly atmospheric, with Columbus’s tomb inside. La Giralda’s ramped climb leads to wide views over the city. It’s an easy landmark to build the day around.",
-  start: new Date(Date.UTC(2026, 2, 20, 14)),
-  end: new Date(Date.UTC(2026, 2, 20, 15)),
 };
 const plazaEspanaSeville: CityEvent = {
   title: "Plaza de España",
@@ -447,8 +402,6 @@ const plazaEspanaSeville: CityEvent = {
   type: "sightseeing",
   description:
     "Plaza de España is an open, curved plaza with canals, bridges, and tiled alcoves representing Spain’s regions. It’s spacious and relaxed despite its scale. Late afternoon light works best here.",
-  start: new Date(Date.UTC(2026, 2, 20, 13, 30)),
-  end: new Date(Date.UTC(2026, 2, 20, 14)),
 };
 const santaCruzSeville: CityEvent = {
   title: "Barrio Santa Cruz",
@@ -476,8 +429,6 @@ const mariaLusiaSeville: CityEvent = {
   type: "nature",
   description:
     "This large park next to Plaza de España provides shade, fountains, and quiet paths. It’s ideal for slowing the pace between sightseeing stops. Easy to enter and exit without planning.",
-  start: new Date(Date.UTC(2026, 2, 20, 12, 30)),
-  end: new Date(Date.UTC(2026, 2, 20, 13, 30)),
 };
 const guadalquivirRiver: CityEvent = {
   title: "Guadalquivir River Walk & Cruise",
@@ -487,8 +438,6 @@ const guadalquivirRiver: CityEvent = {
   type: "nature",
   description:
     "Walking or cruising along the Guadalquivir River is flat, scenic, and especially good near sunset. Bridges and historic buildings line the water, giving great views from either perspective. It’s a relaxed way to shift from daytime sightseeing into evening plans.",
-  start: new Date(Date.UTC(2026, 2, 20, 16)),
-  end: new Date(Date.UTC(2026, 2, 20, 18)),
 };
 
 const metropolParasol: CityEvent = {
@@ -518,8 +467,6 @@ const flamencoSeville: CityEvent = {
   type: "nightlife",
   description:
     "Flamenco in Seville is intense, close-up, and emotional. Performances are usually compact and high-energy. It’s an easy cultural add-on to an evening out.",
-  start: new Date(Date.UTC(2026, 2, 19, 20)),
-  end: new Date(Date.UTC(2026, 2, 19, 21)),
 };
 
 const alamedaHercules: CityEvent = {
@@ -540,8 +487,6 @@ const terrazaBar: CityEvent = {
   type: "nightlife",
   description:
     "This rooftop bar offers close-up views of the cathedral and a refined but relaxed setting. It’s popular for sunset cocktails. Best treated as a short stop before heading elsewhere.",
-  start: new Date(Date.UTC(2026, 2, 20, 20)),
-  end: new Date(Date.UTC(2026, 2, 20, 21)),
 };
 
 const salaCosmos: CityEvent = {
@@ -562,8 +507,6 @@ const mezquitaCathedral: CityEvent = {
   type: "sightseeing",
   description:
     "The Mezquita–Catedral is Córdoba’s defining landmark, known for its rows of red-and-white arches and layered history. Walking through it feels immersive and slightly surreal. Even a short visit leaves a lasting impression.",
-  start: new Date(Date.UTC(2026, 2, 19, 14)),
-  end: new Date(Date.UTC(2026, 2, 19, 14, 30)),
 };
 const jewishQuarter: CityEvent = {
   title: "La Judería (Jewish Quarter)",
@@ -600,8 +543,6 @@ const cordobaFood: CityEvent = {
   type: "food",
   description:
     "A quick stop for local dishes like salmorejo or flamenquín adds flavor without slowing your schedule. Many casual spots are clustered near the historic center. Ideal for a short, efficient break.",
-  start: new Date(Date.UTC(2026, 2, 19, 14, 30)),
-  end: new Date(Date.UTC(2026, 2, 19, 15, 30)),
 };
 
 const barcelonaBrunch: CityEvent = {
@@ -611,8 +552,6 @@ const barcelonaBrunch: CityEvent = {
   type: "food",
   description:
     "Brunch in Barcelona blends laid-back mornings with creative flavors, from classic eggs and avocado to Mediterranean-inspired plates. Many cafés around El Born, Gràcia, and the beach offer relaxed outdoor seating perfect for people-watching. It’s a great way to ease into the day before exploring or heading to the beach.",
-  start: new Date(Date.UTC(2026, 2, 16, 10)),
-  end: new Date(Date.UTC(2026, 2, 16, 12)),
 };
 
 const madridBarcaTrain: CityEvent = {
@@ -622,8 +561,6 @@ const madridBarcaTrain: CityEvent = {
     "https://media.cntraveler.com/photos/68ac749c71f7633489ed72c8/16:9/w_2560%2Cc_limit/082525-Al%2520Andalus-PR-Global-Al%2520Andalus%2520-%2520Olivos%2520en%2520Linares%252002.jpg",
   type: "train",
   description: "Travel from Barcelona to Madrid (~ 3 hours)",
-  start: new Date(Date.UTC(2026, 2, 16, 12, 30)),
-  end: new Date(Date.UTC(2026, 2, 16, 15, 30)),
 };
 
 const madridCordobaTrain: CityEvent = {
@@ -633,8 +570,6 @@ const madridCordobaTrain: CityEvent = {
     "https://media.cntraveler.com/photos/68ac749c71f7633489ed72c8/16:9/w_2560%2Cc_limit/082525-Al%2520Andalus-PR-Global-Al%2520Andalus%2520-%2520Olivos%2520en%2520Linares%252002.jpg",
   type: "train",
   description: "Travel from Madrid to Cordoba (~ 2 hours)",
-  start: new Date(Date.UTC(2026, 2, 19, 12)),
-  end: new Date(Date.UTC(2026, 2, 19, 14)),
 };
 
 const cordobaSevilleTrain: CityEvent = {
@@ -644,8 +579,6 @@ const cordobaSevilleTrain: CityEvent = {
     "https://media.cntraveler.com/photos/68ac749c71f7633489ed72c8/16:9/w_2560%2Cc_limit/082525-Al%2520Andalus-PR-Global-Al%2520Andalus%2520-%2520Olivos%2520en%2520Linares%252002.jpg",
   type: "train",
   description: "Travel from Cordoba to Seville (~ 1 hours)",
-  start: new Date(Date.UTC(2026, 2, 19, 16)),
-  end: new Date(Date.UTC(2026, 2, 19, 17)),
 };
 
 const chicagoBarcelonaPlane1: CityEvent = {
@@ -655,8 +588,6 @@ const chicagoBarcelonaPlane1: CityEvent = {
     "https://www.travelandleisure.com/thmb/AOYoBM7-dy8sZIeKoKUPI-EeTfk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/TAL-airplane-landing-spain-SPANISHAIRLINE0625-a8580b3b8296431ea884699c76e1becf.jpg",
   type: "plane",
   description: "Travel from Chicago to Barcelona (~ 12 hours, 1 stop)",
-  start: new Date(Date.UTC(2026, 2, 13, 23, 35)),
-  end: new Date(Date.UTC(2026, 2, 13, 23, 59)),
 };
 
 const chicagoBarcelonaPlane2: CityEvent = {
@@ -666,8 +597,6 @@ const chicagoBarcelonaPlane2: CityEvent = {
     "https://www.travelandleisure.com/thmb/AOYoBM7-dy8sZIeKoKUPI-EeTfk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/TAL-airplane-landing-spain-SPANISHAIRLINE0625-a8580b3b8296431ea884699c76e1becf.jpg",
   type: "plane",
   description: "Travel from Chicago to Barcelona (~ 12 hours, 1 stop)",
-  start: new Date(Date.UTC(2026, 2, 14, 0)),
-  end: new Date(Date.UTC(2026, 2, 14, 17, 45)),
 };
 
 const madridChicagoPlane: CityEvent = {
@@ -677,8 +606,6 @@ const madridChicagoPlane: CityEvent = {
     "https://www.travelandleisure.com/thmb/AOYoBM7-dy8sZIeKoKUPI-EeTfk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/TAL-airplane-landing-spain-SPANISHAIRLINE0625-a8580b3b8296431ea884699c76e1becf.jpg",
   type: "plane",
   description: "Travel from Chicago to Barcelona (~ 12 hours, 1 stop)",
-  start: new Date(Date.UTC(2026, 2, 20, 10)),
-  end: new Date(Date.UTC(2026, 2, 20, 16)),
 };
 
 const lastDayPadding: CityEvent = {
@@ -688,8 +615,6 @@ const lastDayPadding: CityEvent = {
     "https://www.travelandleisure.com/thmb/AOYoBM7-dy8sZIeKoKUPI-EeTfk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/TAL-airplane-landing-spain-SPANISHAIRLINE0625-a8580b3b8296431ea884699c76e1becf.jpg",
   type: "empty",
   description: "Travel from Chicago to Barcelona (~ 12 hours, 1 stop)",
-  start: new Date(Date.UTC(2026, 2, 20, 16)),
-  end: new Date(Date.UTC(2026, 2, 20, 23, 59)),
 };
 
 export const cities: City[] = [
@@ -778,81 +703,647 @@ export const cities: City[] = [
     ],
   },
 ];
-
-export const plan: Plan = {
+// V1
+export const plan_v1: Plan = {
   days: [
     {
       date: new Date(Date.UTC(2026, 2, 13)),
-      events: [[chicagoBarcelonaPlane1]],
+      events: [
+        [
+          {
+            event: chicagoBarcelonaPlane1,
+            start: new Date(Date.UTC(2026, 2, 13, 23, 35)),
+            end: new Date(Date.UTC(2026, 2, 13, 23, 59)),
+          },
+        ],
+      ],
+      nightEvents: [],
     },
     {
       date: new Date(Date.UTC(2026, 2, 14)),
       events: [
-        [chicagoBarcelonaPlane2],
-        [portVell],
-        [barceloneta],
-        [montjuicHill],
+        [
+          {
+            event: chicagoBarcelonaPlane2,
+            start: new Date(Date.UTC(2026, 2, 14, 0)),
+            end: new Date(Date.UTC(2026, 2, 14, 17, 45)),
+          },
+        ],
+        [
+          {
+            event: portVell,
+            start: new Date(Date.UTC(2026, 2, 14, 18)),
+            end: new Date(Date.UTC(2026, 2, 14, 19)),
+          },
+        ],
+        [
+          {
+            event: barceloneta,
+            start: new Date(Date.UTC(2026, 2, 14, 19)),
+            end: new Date(Date.UTC(2026, 2, 14, 20)),
+          },
+        ],
+        [
+          {
+            event: montjuicHill,
+            start: new Date(Date.UTC(2026, 2, 14, 20)),
+            end: new Date(Date.UTC(2026, 2, 14, 21)),
+          },
+        ],
+      ],
+      nightEvents: [
+        [
+          {
+            event: barcaRooftop,
+            start: new Date(Date.UTC(2026, 2, 14, 22)),
+            end: new Date(Date.UTC(2026, 2, 15, 2)),
+          },
+        ],
       ],
     },
     {
       date: new Date(Date.UTC(2026, 2, 15)),
       events: [
-        [sagradaFamilia],
-        [plazaCatalunya],
-        [gothicQuarter],
-        [elBorn],
-        [ciutadellaPark],
-        [laBoqueria],
-        [barcaGame],
+        [
+          {
+            event: sagradaFamilia,
+            start: new Date(Date.UTC(2026, 2, 15, 10)),
+            end: new Date(Date.UTC(2026, 2, 15, 11, 30)),
+          },
+        ],
+        [
+          {
+            event: plazaCatalunya,
+            start: new Date(Date.UTC(2026, 2, 15, 13, 30)),
+            end: new Date(Date.UTC(2026, 2, 15, 14)),
+          },
+        ],
+        [
+          {
+            event: gothicQuarter,
+            start: new Date(Date.UTC(2026, 2, 15, 14)),
+            end: new Date(Date.UTC(2026, 2, 15, 15, 30)),
+          },
+        ],
+        [
+          {
+            event: elBorn,
+            start: new Date(Date.UTC(2026, 2, 15, 15)),
+            end: new Date(Date.UTC(2026, 2, 15, 15, 30)),
+          },
+        ],
+        [
+          {
+            event: ciutadellaPark,
+            start: new Date(Date.UTC(2026, 2, 15, 15, 30)),
+            end: new Date(Date.UTC(2026, 2, 15, 17)),
+          },
+        ],
+        [
+          {
+            event: laBoqueria,
+            start: new Date(Date.UTC(2026, 2, 15, 17)),
+            end: new Date(Date.UTC(2026, 2, 15, 18)),
+          },
+        ],
+        [
+          {
+            event: barcaGame,
+            start: new Date(Date.UTC(2026, 2, 15, 21)),
+            end: new Date(Date.UTC(2026, 2, 15, 23)),
+          },
+        ],
+      ],
+      nightEvents: [
+        [
+          {
+            event: placaReial,
+            start: new Date(Date.UTC(2026, 2, 16)),
+            end: new Date(Date.UTC(2026, 2, 16, 2)),
+          },
+        ],
       ],
     },
     {
       date: new Date(Date.UTC(2026, 2, 16)),
       events: [
-        [barcelonaPickup],
-        [barcelonaBrunch],
-        [madridBarcaTrain],
-        [buenRetiroPark],
-        [puertaDelSol],
-        [plazaCibelesAndMayor],
-        [granVia],
+        [
+          {
+            event: barcelonaPickup,
+            start: new Date(Date.UTC(2026, 2, 16, 8)),
+            end: new Date(Date.UTC(2026, 2, 16, 10)),
+          },
+        ],
+        [
+          {
+            event: barcelonaBrunch,
+            start: new Date(Date.UTC(2026, 2, 16, 10)),
+            end: new Date(Date.UTC(2026, 2, 16, 12)),
+          },
+        ],
+        [
+          {
+            event: madridBarcaTrain,
+            start: new Date(Date.UTC(2026, 2, 16, 12, 30)),
+            end: new Date(Date.UTC(2026, 2, 16, 15, 30)),
+          },
+        ],
+        [
+          {
+            event: buenRetiroPark,
+            start: new Date(Date.UTC(2026, 2, 16, 16, 30)),
+            end: new Date(Date.UTC(2026, 2, 16, 17, 45)),
+          },
+        ],
+        [
+          {
+            event: puertaDelSol,
+            start: new Date(Date.UTC(2026, 2, 16, 17, 45)),
+            end: new Date(Date.UTC(2026, 2, 16, 18)),
+          },
+        ],
+        [
+          {
+            event: plazaCibelesAndMayor,
+            start: new Date(Date.UTC(2026, 2, 16, 19, 30)),
+            end: new Date(Date.UTC(2026, 2, 16, 20)),
+          },
+        ],
+        [
+          {
+            event: granVia,
+            start: new Date(Date.UTC(2026, 2, 16, 20)),
+            end: new Date(Date.UTC(2026, 2, 16, 20, 30)),
+          },
+        ],
+      ],
+      nightEvents: [
+        [
+          {
+            event: teatroKapital,
+            start: new Date(Date.UTC(2026, 2, 17)),
+            end: new Date(Date.UTC(2026, 2, 17, 3)),
+          },
+        ],
       ],
     },
     {
       date: new Date(Date.UTC(2026, 2, 17)),
-      events: [[madridZoo], [mercadoSanMiguel]],
+      events: [
+        [
+          {
+            event: madridZoo,
+            start: new Date(Date.UTC(2026, 2, 17, 13)),
+            end: new Date(Date.UTC(2026, 2, 17, 17)),
+          },
+        ],
+        [
+          {
+            event: mercadoSanMiguel,
+            start: new Date(Date.UTC(2026, 2, 17, 19, 30)),
+            end: new Date(Date.UTC(2026, 2, 17, 20, 30)),
+          },
+        ],
+      ],
+      nightEvents: [
+        [
+          {
+            event: madridBarHopping,
+            start: new Date(Date.UTC(2026, 2, 17, 23)),
+            end: new Date(Date.UTC(2026, 2, 18, 2)),
+          },
+        ],
+      ],
     },
     {
       date: new Date(Date.UTC(2026, 2, 18)),
       events: [
-        [palacioMadrid, gokarting],
-        [delPradoMuseum, warnerBrosPark],
-        [cookingClass],
+        [
+          {
+            event: palacioMadrid,
+            start: new Date(Date.UTC(2026, 2, 18, 12)),
+            end: new Date(Date.UTC(2026, 2, 18, 14)),
+          },
+          {
+            event: gokarting,
+            start: new Date(Date.UTC(2026, 2, 18, 12)),
+            end: new Date(Date.UTC(2026, 2, 18, 14)),
+          },
+        ],
+        [
+          {
+            event: delPradoMuseum,
+            start: new Date(Date.UTC(2026, 2, 18, 14)),
+            end: new Date(Date.UTC(2026, 2, 18, 17)),
+          },
+          {
+            event: warnerBrosPark,
+            start: new Date(Date.UTC(2026, 2, 18, 14)),
+            end: new Date(Date.UTC(2026, 2, 18, 17)),
+          },
+        ],
+        [
+          {
+            event: cookingClass,
+            start: new Date(Date.UTC(2026, 2, 18, 17, 30)),
+            end: new Date(Date.UTC(2026, 2, 18, 20, 30)),
+          },
+        ],
+      ],
+      nightEvents: [],
+    },
+    {
+      date: new Date(Date.UTC(2026, 2, 19)),
+      events: [
+        [
+          {
+            event: bernabeu,
+            start: new Date(Date.UTC(2026, 2, 19, 9)),
+            end: new Date(Date.UTC(2026, 2, 19, 11)),
+          },
+        ],
+        [
+          {
+            event: madridCordobaTrain,
+            start: new Date(Date.UTC(2026, 2, 19, 12)),
+            end: new Date(Date.UTC(2026, 2, 19, 14)),
+          },
+        ],
+        [
+          {
+            event: mezquitaCathedral,
+            start: new Date(Date.UTC(2026, 2, 19, 14)),
+            end: new Date(Date.UTC(2026, 2, 19, 14, 30)),
+          },
+        ],
+        [
+          {
+            event: cordobaFood,
+            start: new Date(Date.UTC(2026, 2, 19, 14, 30)),
+            end: new Date(Date.UTC(2026, 2, 19, 15, 30)),
+          },
+        ],
+        [
+          {
+            event: cordobaSevilleTrain,
+            start: new Date(Date.UTC(2026, 2, 19, 16)),
+            end: new Date(Date.UTC(2026, 2, 19, 17)),
+          },
+        ],
+        [
+          {
+            event: flamencoSeville,
+            start: new Date(Date.UTC(2026, 2, 19, 20)),
+            end: new Date(Date.UTC(2026, 2, 19, 21)),
+          },
+        ],
+      ],
+      nightEvents: [],
+    },
+    {
+      date: new Date(Date.UTC(2026, 2, 20)),
+      events: [
+        [
+          {
+            event: mariaLusiaSeville,
+            start: new Date(Date.UTC(2026, 2, 20, 12, 30)),
+            end: new Date(Date.UTC(2026, 2, 20, 13, 30)),
+          },
+        ],
+        [
+          {
+            event: plazaEspanaSeville,
+            start: new Date(Date.UTC(2026, 2, 20, 13, 30)),
+            end: new Date(Date.UTC(2026, 2, 20, 14)),
+          },
+        ],
+        [
+          {
+            event: sevilleCathedralAndLaGiralda,
+            start: new Date(Date.UTC(2026, 2, 20, 14)),
+            end: new Date(Date.UTC(2026, 2, 20, 15)),
+          },
+        ],
+        [
+          {
+            event: guadalquivirRiver,
+            start: new Date(Date.UTC(2026, 2, 20, 16)),
+            end: new Date(Date.UTC(2026, 2, 20, 18)),
+          },
+        ],
+        [
+          {
+            event: terrazaBar,
+            start: new Date(Date.UTC(2026, 2, 20, 20)),
+            end: new Date(Date.UTC(2026, 2, 20, 21)),
+          },
+        ],
+      ],
+      nightEvents: [],
+    },
+    {
+      date: new Date(Date.UTC(2026, 2, 21)),
+      events: [
+        [
+          {
+            event: madridChicagoPlane,
+            start: new Date(Date.UTC(2026, 2, 21, 13)),
+            end: new Date(Date.UTC(2026, 2, 21, 16)),
+          },
+        ],
+        [
+          {
+            event: lastDayPadding,
+            start: new Date(Date.UTC(2026, 2, 21, 16)),
+            end: new Date(Date.UTC(2026, 2, 21, 23, 59)),
+          },
+        ],
+      ],
+      nightEvents: [],
+    },
+  ],
+};
+
+// V2
+export const plan_v2: Plan = {
+  days: [
+    {
+      date: new Date(Date.UTC(2026, 2, 13)),
+      events: [
+        [
+          {
+            event: chicagoBarcelonaPlane1,
+            start: new Date(Date.UTC(2026, 2, 13, 23, 35)),
+            end: new Date(Date.UTC(2026, 2, 13, 23, 59)),
+          },
+        ],
+      ],
+      nightEvents: [],
+    },
+    {
+      date: new Date(Date.UTC(2026, 2, 14)),
+      events: [
+        [
+          {
+            event: chicagoBarcelonaPlane2,
+            start: new Date(Date.UTC(2026, 2, 14, 0)),
+            end: new Date(Date.UTC(2026, 2, 14, 17, 45)),
+          },
+        ],
+        [
+          {
+            event: portVell,
+            start: new Date(Date.UTC(2026, 2, 14, 18)),
+            end: new Date(Date.UTC(2026, 2, 14, 19)),
+          },
+        ],
+        [
+          {
+            event: barceloneta,
+            start: new Date(Date.UTC(2026, 2, 14, 19)),
+            end: new Date(Date.UTC(2026, 2, 14, 20)),
+          },
+        ],
+        [
+          {
+            event: montjuicHill,
+            start: new Date(Date.UTC(2026, 2, 14, 20)),
+            end: new Date(Date.UTC(2026, 2, 14, 21)),
+          },
+        ],
+      ],
+      nightEvents: [
+        [
+          {
+            event: barcaRooftop,
+            start: new Date(Date.UTC(2026, 2, 14, 22)),
+            end: new Date(Date.UTC(2026, 2, 15, 2)),
+          },
+        ],
+      ],
+    },
+    {
+      date: new Date(Date.UTC(2026, 2, 15)),
+      events: [
+        [
+          {
+            event: sagradaFamilia,
+            start: new Date(Date.UTC(2026, 2, 15, 10)),
+            end: new Date(Date.UTC(2026, 2, 15, 11, 30)),
+          },
+        ],
+        [
+          {
+            event: plazaCatalunya,
+            start: new Date(Date.UTC(2026, 2, 15, 13, 30)),
+            end: new Date(Date.UTC(2026, 2, 15, 14)),
+          },
+        ],
+        [
+          {
+            event: gothicQuarter,
+            start: new Date(Date.UTC(2026, 2, 15, 14)),
+            end: new Date(Date.UTC(2026, 2, 15, 15, 30)),
+          },
+        ],
+        [
+          {
+            event: elBorn,
+            start: new Date(Date.UTC(2026, 2, 15, 15)),
+            end: new Date(Date.UTC(2026, 2, 15, 15, 30)),
+          },
+        ],
+        [
+          {
+            event: ciutadellaPark,
+            start: new Date(Date.UTC(2026, 2, 15, 15, 30)),
+            end: new Date(Date.UTC(2026, 2, 15, 17)),
+          },
+        ],
+        [
+          {
+            event: laBoqueria,
+            start: new Date(Date.UTC(2026, 2, 15, 17)),
+            end: new Date(Date.UTC(2026, 2, 15, 18)),
+          },
+        ],
+        [
+          {
+            event: barcaGame,
+            start: new Date(Date.UTC(2026, 2, 15, 21)),
+            end: new Date(Date.UTC(2026, 2, 15, 23)),
+          },
+        ],
+      ],
+      nightEvents: [
+        [
+          {
+            event: placaReial,
+            start: new Date(Date.UTC(2026, 2, 16)),
+            end: new Date(Date.UTC(2026, 2, 16, 2)),
+          },
+        ],
+      ],
+    },
+    {
+      date: new Date(Date.UTC(2026, 2, 16)),
+      events: [],
+      nightEvents: [],
+    },
+    {
+      date: new Date(Date.UTC(2026, 2, 17)),
+      events: [
+        [
+          {
+            event: barcelonaPickup,
+            start: new Date(Date.UTC(2026, 2, 17, 8)),
+            end: new Date(Date.UTC(2026, 2, 17, 10)),
+          },
+        ],
+        [
+          {
+            event: barcelonaBrunch,
+            start: new Date(Date.UTC(2026, 2, 17, 10)),
+            end: new Date(Date.UTC(2026, 2, 17, 12)),
+          },
+        ],
+        [
+          {
+            event: madridBarcaTrain,
+            start: new Date(Date.UTC(2026, 2, 17, 12, 30)),
+            end: new Date(Date.UTC(2026, 2, 17, 15, 30)),
+          },
+        ],
+        [
+          {
+            event: buenRetiroPark,
+            start: new Date(Date.UTC(2026, 2, 17, 16, 30)),
+            end: new Date(Date.UTC(2026, 2, 17, 17, 45)),
+          },
+        ],
+        [
+          {
+            event: puertaDelSol,
+            start: new Date(Date.UTC(2026, 2, 17, 17, 45)),
+            end: new Date(Date.UTC(2026, 2, 17, 18)),
+          },
+        ],
+        [
+          {
+            event: plazaCibelesAndMayor,
+            start: new Date(Date.UTC(2026, 2, 17, 19, 30)),
+            end: new Date(Date.UTC(2026, 2, 17, 20)),
+          },
+        ],
+        [
+          {
+            event: granVia,
+            start: new Date(Date.UTC(2026, 2, 17, 20)),
+            end: new Date(Date.UTC(2026, 2, 17, 20, 30)),
+          },
+        ],
+      ],
+      nightEvents: [
+        [
+          {
+            event: teatroKapital,
+            start: new Date(Date.UTC(2026, 2, 18)),
+            end: new Date(Date.UTC(2026, 2, 18, 3)),
+          },
+        ],
+      ],
+    },
+    {
+      date: new Date(Date.UTC(2026, 2, 18)),
+      events: [
+        [
+          {
+            event: madridZoo,
+            start: new Date(Date.UTC(2026, 2, 18, 13)),
+            end: new Date(Date.UTC(2026, 2, 18, 17)),
+          },
+        ],
+        [
+          {
+            event: mercadoSanMiguel,
+            start: new Date(Date.UTC(2026, 2, 19, 19, 30)),
+            end: new Date(Date.UTC(2026, 2, 19, 20, 30)),
+          },
+        ],
+      ],
+      nightEvents: [
+        [
+          {
+            event: madridBarHopping,
+            start: new Date(Date.UTC(2026, 2, 18, 23)),
+            end: new Date(Date.UTC(2026, 2, 19, 2)),
+          },
+        ],
       ],
     },
     {
       date: new Date(Date.UTC(2026, 2, 19)),
       events: [
-        [bernabeu],
-        [madridCordobaTrain],
-        [mezquitaCathedral],
-        [cordobaSevilleTrain],
-        [flamencoSeville],
+        [
+          {
+            event: palacioMadrid,
+            start: new Date(Date.UTC(2026, 2, 19, 12)),
+            end: new Date(Date.UTC(2026, 2, 19, 14)),
+          },
+          {
+            event: gokarting,
+            start: new Date(Date.UTC(2026, 2, 19, 12)),
+            end: new Date(Date.UTC(2026, 2, 19, 14)),
+          },
+        ],
+        [
+          {
+            event: delPradoMuseum,
+            start: new Date(Date.UTC(2026, 2, 19, 14)),
+            end: new Date(Date.UTC(2026, 2, 19, 17)),
+          },
+          {
+            event: warnerBrosPark,
+            start: new Date(Date.UTC(2026, 2, 19, 14)),
+            end: new Date(Date.UTC(2026, 2, 19, 17)),
+          },
+        ],
+        [
+          {
+            event: cookingClass,
+            start: new Date(Date.UTC(2026, 2, 19, 17, 30)),
+            end: new Date(Date.UTC(2026, 2, 19, 20, 30)),
+          },
+        ],
       ],
+      nightEvents: [],
     },
     {
       date: new Date(Date.UTC(2026, 2, 20)),
       events: [
-        [mariaLusiaSeville],
-        [plazaEspanaSeville],
-        [sevilleCathedralAndLaGiralda],
-        [guadalquivirRiver],
-        [terrazaBar],
+        [
+          {
+            event: bernabeu,
+            start: new Date(Date.UTC(2026, 2, 20, 9)),
+            end: new Date(Date.UTC(2026, 2, 20, 11)),
+          },
+        ],
+        [
+          {
+            event: madridChicagoPlane,
+            start: new Date(Date.UTC(2026, 2, 20, 13)),
+            end: new Date(Date.UTC(2026, 2, 20, 16)),
+          },
+        ],
+        [
+          {
+            event: lastDayPadding,
+            start: new Date(Date.UTC(2026, 2, 20, 16)),
+            end: new Date(Date.UTC(2026, 2, 20, 23, 59)),
+          },
+        ],
       ],
-    },
-    {
-      date: new Date(Date.UTC(2026, 2, 21)),
-      events: [[madridChicagoPlane], [lastDayPadding]],
+      nightEvents: [],
     },
   ],
 };
