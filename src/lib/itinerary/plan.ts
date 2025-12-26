@@ -974,6 +974,11 @@ export const plan_v1: Plan = {
             start: new Date(Date.UTC(2026, 2, 16, 17, 45)),
             end: new Date(Date.UTC(2026, 2, 16, 18)),
           },
+          {
+            event: madridBikeTour,
+            start: new Date(Date.UTC(2026, 2, 16, 17, 45)),
+            end: new Date(Date.UTC(2026, 2, 16, 18)),
+          },
         ],
         [
           {
@@ -981,10 +986,20 @@ export const plan_v1: Plan = {
             start: new Date(Date.UTC(2026, 2, 16, 19, 30)),
             end: new Date(Date.UTC(2026, 2, 16, 20)),
           },
+          {
+            event: madridBikeTour,
+            start: new Date(Date.UTC(2026, 2, 16, 19, 30)),
+            end: new Date(Date.UTC(2026, 2, 16, 20)),
+          },
         ],
         [
           {
             event: granVia,
+            start: new Date(Date.UTC(2026, 2, 16, 20)),
+            end: new Date(Date.UTC(2026, 2, 16, 20, 30)),
+          },
+          {
+            event: madridBikeTour,
             start: new Date(Date.UTC(2026, 2, 16, 20)),
             end: new Date(Date.UTC(2026, 2, 16, 20, 30)),
           },
@@ -1416,22 +1431,37 @@ export const plan_v2: Plan = {
         [
           {
             event: puertaDelSol,
-            start: new Date(Date.UTC(2026, 2, 17, 17, 45)),
-            end: new Date(Date.UTC(2026, 2, 17, 18)),
+            start: new Date(Date.UTC(2026, 2, 16, 17, 45)),
+            end: new Date(Date.UTC(2026, 2, 16, 18)),
+          },
+          {
+            event: madridBikeTour,
+            start: new Date(Date.UTC(2026, 2, 16, 17, 45)),
+            end: new Date(Date.UTC(2026, 2, 16, 18)),
           },
         ],
         [
           {
             event: plazaCibelesAndMayor,
-            start: new Date(Date.UTC(2026, 2, 17, 19, 30)),
-            end: new Date(Date.UTC(2026, 2, 17, 20)),
+            start: new Date(Date.UTC(2026, 2, 16, 19, 30)),
+            end: new Date(Date.UTC(2026, 2, 16, 20)),
+          },
+          {
+            event: madridBikeTour,
+            start: new Date(Date.UTC(2026, 2, 16, 19, 30)),
+            end: new Date(Date.UTC(2026, 2, 16, 20)),
           },
         ],
         [
           {
             event: granVia,
-            start: new Date(Date.UTC(2026, 2, 17, 20)),
-            end: new Date(Date.UTC(2026, 2, 17, 20, 30)),
+            start: new Date(Date.UTC(2026, 2, 16, 20)),
+            end: new Date(Date.UTC(2026, 2, 16, 20, 30)),
+          },
+          {
+            event: madridBikeTour,
+            start: new Date(Date.UTC(2026, 2, 16, 20)),
+            end: new Date(Date.UTC(2026, 2, 16, 20, 30)),
           },
         ],
       ],
