@@ -92,6 +92,17 @@ const barceloneta: CityEvent = {
   description:
     "Barceloneta Beach is the heart of Barcelona’s seaside vibe, with wide sandy shores and lively promenade bars. Even in cooler months, it’s great for strolling and drinks with a view. Sunset here is one of the city’s most social daily rituals.",
 };
+
+const barcaClubs: CityEvent = {
+  title: "Pacha, Opium & Shôko (Barcelona Beach Clubs)",
+  city: "Barcelona",
+  imageLink:
+    "https://shoko.biz/cdn/shop/files/6_802bcb15-06c1-4782-81ca-6690381ff46d.jpg?v=1754413546&width=3840",
+  type: "nightlife",
+  description:
+    "Barcelona’s beachfront clubs—Pacha, Opium, and Shôko—are some of the city’s most popular late-night spots. They combine DJs, dancing, and oceanfront views, with crowds that build after midnight and peak late. It’s a high-energy option that feels distinctly Barcelona.",
+};
+
 const barcelonaPickup: CityEvent = {
   title: "Pickup Soccer (optional)",
   city: "Barcelona",
@@ -173,6 +184,26 @@ const elBorn: CityEvent = {
   description:
     "El Born mixes history with trendy boutiques and buzzing cafes. Wander its narrow lanes, discover artisanal shops, and stop for tapas or drinks. It’s one of the city’s most dynamic and walkable neighborhoods.",
 };
+const beachVolleyball: CityEvent = {
+  title: "Beach Volleyball at Barceloneta",
+  city: "Barcelona",
+  imageLink:
+    "https://blog.apartmentbarcelona.com/wp-content/uploads/2023/06/beach-volleyball-6113245_1280.jpg",
+  type: "activities",
+  description:
+    "Barceloneta’s public volleyball courts are active most mornings and easy to drop into. Games are casual and social, whether you’re joining an open match or just rallying with friends. It’s a quick way to get moving by the beach without committing to a full workout.",
+};
+
+const barcelonaShopping: CityEvent = {
+  title: "Shopping in El Born & Passeig de Gràcia",
+  city: "Barcelona",
+  imageLink:
+    "https://www.paseodegracia.com/wp-content/uploads/2011/07/CHANEL.jpg",
+  type: "activities",
+  description:
+    "Shopping around El Born and Passeig de Gràcia mixes local boutiques with familiar brands. Passeig de Gràcia has flagship stores like Uniqlo, Zara, and H&M, while nearby areas offer streetwear and surf-style shops similar to PacSun. It’s easy to bounce between polished avenues and smaller side streets without committing to a full shopping day.",
+};
+
 const portAventura: CityEvent = {
   title: "PortAventura Park",
   city: "Barcelona",
@@ -255,6 +286,15 @@ const gokarting: CityEvent = {
   type: "activities",
   description:
     "Go-kart tracks around Madrid offer a high-energy break from sightseeing. Races are short, competitive, and easy to jump into. It’s a fun group activity that doesn’t require much planning.",
+};
+const madridSportsPark: CityEvent = {
+  title: "Madrid Río Sports & Activity Zone",
+  city: "Madrid",
+  imageLink:
+    "https://www.gestilar.com/uploads/Blog/BLOG%202020/200528_RC7_13_CONJUNTO_NOCHE_4000p.jpg",
+  type: "activities",
+  description:
+    "Madrid Río is a huge riverside park with open paths, courts, and activity zones stretching along the river. You can bike, walk, play tennis, kick a ball around, or just hang out by the water. It’s easy to drop in for something active without committing to a full plan.",
 };
 const goldMadrid: CityEvent = {
   title: "Golf in Madrid",
@@ -364,6 +404,16 @@ const madridBarHopping: CityEvent = {
   type: "nightlife",
   description:
     "This classic route moves from alternative bars to high-energy clubs as the night goes on. Neighborhoods blend together naturally, making it easy to keep going. Expect late starts and very late finishes.",
+};
+
+const madridShopping: CityEvent = {
+  title: "Shopping in Gran Vía & Salamanca District",
+  city: "Madrid",
+  imageLink:
+    "https://madridpourvous.com/wp-content/uploads/2019/04/resized_Tienda-Gran-V%C3%ADa-Primark1.jpg",
+  type: "activities",
+  description:
+    "Shopping in Madrid centers around Gran Vía and the nearby Salamanca District. Gran Vía has major international brands like Zara, Uniqlo, and flagship fashion stores, while Salamanca leans more upscale and polished. It’s easy to browse casually and mix shopping with cafés and food stops.",
 };
 
 const teatroKapital: CityEvent = {
@@ -545,7 +595,7 @@ const cordobaFood: CityEvent = {
     "A quick stop for local dishes like salmorejo or flamenquín adds flavor without slowing your schedule. Many casual spots are clustered near the historic center. Ideal for a short, efficient break.",
 };
 
-const barcelonaBrunch: CityEvent = {
+const barcelonaBrunch1: CityEvent = {
   title: "Brunch in Barcelona",
   city: "Barcelona",
   imageLink: "https://media.timeout.com/images/105994392/image.jpg",
@@ -554,6 +604,49 @@ const barcelonaBrunch: CityEvent = {
     "Brunch in Barcelona blends laid-back mornings with creative flavors, from classic eggs and avocado to Mediterranean-inspired plates. Many cafés around El Born, Gràcia, and the beach offer relaxed outdoor seating perfect for people-watching. It’s a great way to ease into the day before exploring or heading to the beach.",
 };
 
+const barcelonaBrunch2: CityEvent = {
+  title: "Brunch in Barcelona",
+  city: "Barcelona",
+  imageLink: "https://media.timeout.com/images/105994392/image.jpg",
+  type: "food",
+  description:
+    "Brunch in Barcelona blends laid-back mornings with creative flavors, from classic eggs and avocado to Mediterranean-inspired plates. Many cafés around El Born, Gràcia, and the beach offer relaxed outdoor seating perfect for people-watching. It’s a great way to ease into the day before exploring or heading to the beach.",
+};
+
+const barcaMontserratBus: CityEvent = {
+  title: "Bus from Barcelona - Montserrat",
+  city: "Barcelona",
+  imageLink:
+    "https://cdn-imgix.headout.com/media/images/9e42c0a5261b793f42afd9d95ea50e94-Buses-from-Barcelona-to-Montserrat.jpg?auto=format&q=90&crop=faces&fit=crop",
+  type: "train",
+  description: "Take a bus from Barcelona to Montserrat (~2 hours)",
+};
+
+const montserratBarcaBus: CityEvent = {
+  title: "Bus from Montserrat - Barcelona",
+  city: "Barcelona",
+  imageLink:
+    "https://cdn-imgix.headout.com/media/images/9e42c0a5261b793f42afd9d95ea50e94-Buses-from-Barcelona-to-Montserrat.jpg?auto=format&q=90&crop=faces&fit=crop",
+  type: "train",
+  description: "Take a bus from Barcelona to Montserrat (~2 hours)",
+};
+const barcaCostaBravaBus: CityEvent = {
+  title: "Bus from Barcelona - Costa Brava",
+  city: "Barcelona",
+  imageLink:
+    "https://offloadmedia.feverup.com/barcelonasecreta.com/wp-content/uploads/2025/08/07113457/bus_de_barcelona_a_costa_brava-min-2.jpg",
+  type: "train",
+  description: "Take a bus from Barcelona to Costa Brava (~2 hours)",
+};
+
+const costaBravaBarcaBus: CityEvent = {
+  title: "Bus from Costa Brava - Barcelona",
+  city: "Barcelona",
+  imageLink:
+    "https://offloadmedia.feverup.com/barcelonasecreta.com/wp-content/uploads/2025/08/07113457/bus_de_barcelona_a_costa_brava-min-2.jpg",
+  type: "train",
+  description: "Take a bus from Costa Brava to Barcelona (~2 hours)",
+};
 const madridBarcaTrain: CityEvent = {
   title: "Train from Barcelona - Madrid",
   city: "Barcelona",
@@ -754,9 +847,9 @@ export const plan_v1: Plan = {
       nightEvents: [
         [
           {
-            event: barcaRooftop,
+            event: placaReial,
             start: new Date(Date.UTC(2026, 2, 14, 22)),
-            end: new Date(Date.UTC(2026, 2, 15, 2)),
+            end: new Date(Date.UTC(2026, 2, 15)),
           },
         ],
       ],
@@ -770,10 +863,20 @@ export const plan_v1: Plan = {
             start: new Date(Date.UTC(2026, 2, 15, 10)),
             end: new Date(Date.UTC(2026, 2, 15, 11, 30)),
           },
+          {
+            event: barcelonaShopping,
+            start: new Date(Date.UTC(2026, 2, 15, 10)),
+            end: new Date(Date.UTC(2026, 2, 15, 11, 30)),
+          },
         ],
         [
           {
             event: plazaCatalunya,
+            start: new Date(Date.UTC(2026, 2, 15, 13, 30)),
+            end: new Date(Date.UTC(2026, 2, 15, 14)),
+          },
+          {
+            event: beachVolleyball,
             start: new Date(Date.UTC(2026, 2, 15, 13, 30)),
             end: new Date(Date.UTC(2026, 2, 15, 14)),
           },
@@ -784,10 +887,20 @@ export const plan_v1: Plan = {
             start: new Date(Date.UTC(2026, 2, 15, 14)),
             end: new Date(Date.UTC(2026, 2, 15, 15, 30)),
           },
+          {
+            event: beachVolleyball,
+            start: new Date(Date.UTC(2026, 2, 15, 14)),
+            end: new Date(Date.UTC(2026, 2, 15, 15, 30)),
+          },
         ],
         [
           {
             event: elBorn,
+            start: new Date(Date.UTC(2026, 2, 15, 15)),
+            end: new Date(Date.UTC(2026, 2, 15, 15, 30)),
+          },
+          {
+            event: beachVolleyball,
             start: new Date(Date.UTC(2026, 2, 15, 15)),
             end: new Date(Date.UTC(2026, 2, 15, 15, 30)),
           },
@@ -817,7 +930,7 @@ export const plan_v1: Plan = {
       nightEvents: [
         [
           {
-            event: placaReial,
+            event: barcaClubs,
             start: new Date(Date.UTC(2026, 2, 16)),
             end: new Date(Date.UTC(2026, 2, 16, 2)),
           },
@@ -836,7 +949,7 @@ export const plan_v1: Plan = {
         ],
         [
           {
-            event: barcelonaBrunch,
+            event: barcelonaBrunch1,
             start: new Date(Date.UTC(2026, 2, 16, 10)),
             end: new Date(Date.UTC(2026, 2, 16, 12)),
           },
@@ -892,6 +1005,13 @@ export const plan_v1: Plan = {
       events: [
         [
           {
+            event: madridShopping,
+            start: new Date(Date.UTC(2026, 2, 17, 9)),
+            end: new Date(Date.UTC(2026, 2, 17, 11)),
+          },
+        ],
+        [
+          {
             event: madridZoo,
             start: new Date(Date.UTC(2026, 2, 17, 13)),
             end: new Date(Date.UTC(2026, 2, 17, 17)),
@@ -918,6 +1038,13 @@ export const plan_v1: Plan = {
     {
       date: new Date(Date.UTC(2026, 2, 18)),
       events: [
+        [
+          {
+            event: madridSportsPark,
+            start: new Date(Date.UTC(2026, 2, 18, 9)),
+            end: new Date(Date.UTC(2026, 2, 18, 11)),
+          },
+        ],
         [
           {
             event: palacioMadrid,
@@ -1131,10 +1258,20 @@ export const plan_v2: Plan = {
             start: new Date(Date.UTC(2026, 2, 15, 10)),
             end: new Date(Date.UTC(2026, 2, 15, 11, 30)),
           },
+          {
+            event: barcelonaShopping,
+            start: new Date(Date.UTC(2026, 2, 15, 10)),
+            end: new Date(Date.UTC(2026, 2, 15, 11, 30)),
+          },
         ],
         [
           {
             event: plazaCatalunya,
+            start: new Date(Date.UTC(2026, 2, 15, 13, 30)),
+            end: new Date(Date.UTC(2026, 2, 15, 14)),
+          },
+          {
+            event: beachVolleyball,
             start: new Date(Date.UTC(2026, 2, 15, 13, 30)),
             end: new Date(Date.UTC(2026, 2, 15, 14)),
           },
@@ -1145,10 +1282,20 @@ export const plan_v2: Plan = {
             start: new Date(Date.UTC(2026, 2, 15, 14)),
             end: new Date(Date.UTC(2026, 2, 15, 15, 30)),
           },
+          {
+            event: beachVolleyball,
+            start: new Date(Date.UTC(2026, 2, 15, 14)),
+            end: new Date(Date.UTC(2026, 2, 15, 15, 30)),
+          },
         ],
         [
           {
             event: elBorn,
+            start: new Date(Date.UTC(2026, 2, 15, 15)),
+            end: new Date(Date.UTC(2026, 2, 15, 15, 30)),
+          },
+          {
+            event: beachVolleyball,
             start: new Date(Date.UTC(2026, 2, 15, 15)),
             end: new Date(Date.UTC(2026, 2, 15, 15, 30)),
           },
@@ -1187,8 +1334,53 @@ export const plan_v2: Plan = {
     },
     {
       date: new Date(Date.UTC(2026, 2, 16)),
-      events: [],
-      nightEvents: [],
+      events: [
+        [
+          {
+            event: barcaMontserratBus,
+            start: new Date(Date.UTC(2026, 2, 16, 10)),
+            end: new Date(Date.UTC(2026, 2, 16, 12)),
+          },
+          {
+            event: barcaCostaBravaBus,
+            start: new Date(Date.UTC(2026, 2, 16, 10)),
+            end: new Date(Date.UTC(2026, 2, 16, 12)),
+          },
+        ],
+        [
+          {
+            event: montserrat,
+            start: new Date(Date.UTC(2026, 2, 16, 12)),
+            end: new Date(Date.UTC(2026, 2, 16, 16)),
+          },
+          {
+            event: costaBrava,
+            start: new Date(Date.UTC(2026, 2, 16, 12)),
+            end: new Date(Date.UTC(2026, 2, 16, 16)),
+          },
+        ],
+        [
+          {
+            event: montserratBarcaBus,
+            start: new Date(Date.UTC(2026, 2, 16, 16)),
+            end: new Date(Date.UTC(2026, 2, 16, 18)),
+          },
+          {
+            event: costaBravaBarcaBus,
+            start: new Date(Date.UTC(2026, 2, 16, 16)),
+            end: new Date(Date.UTC(2026, 2, 16, 18)),
+          },
+        ],
+      ],
+      nightEvents: [
+        [
+          {
+            event: barcaClubs,
+            start: new Date(Date.UTC(2026, 2, 16, 23)),
+            end: new Date(Date.UTC(2026, 2, 17, 2)),
+          },
+        ],
+      ],
     },
     {
       date: new Date(Date.UTC(2026, 2, 17)),
@@ -1202,7 +1394,7 @@ export const plan_v2: Plan = {
         ],
         [
           {
-            event: barcelonaBrunch,
+            event: barcelonaBrunch2,
             start: new Date(Date.UTC(2026, 2, 17, 10)),
             end: new Date(Date.UTC(2026, 2, 17, 12)),
           },
@@ -1258,6 +1450,13 @@ export const plan_v2: Plan = {
       events: [
         [
           {
+            event: madridShopping,
+            start: new Date(Date.UTC(2026, 2, 18, 9)),
+            end: new Date(Date.UTC(2026, 2, 18, 11)),
+          },
+        ],
+        [
+          {
             event: madridZoo,
             start: new Date(Date.UTC(2026, 2, 18, 13)),
             end: new Date(Date.UTC(2026, 2, 18, 17)),
@@ -1284,6 +1483,13 @@ export const plan_v2: Plan = {
     {
       date: new Date(Date.UTC(2026, 2, 19)),
       events: [
+        [
+          {
+            event: madridSportsPark,
+            start: new Date(Date.UTC(2026, 2, 19, 9)),
+            end: new Date(Date.UTC(2026, 2, 19, 11)),
+          },
+        ],
         [
           {
             event: palacioMadrid,
