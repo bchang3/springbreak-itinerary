@@ -55,7 +55,7 @@ export default function Home() {
           <MenuItem value={"v1"}>Plan 1</MenuItem>
           <MenuItem value={"v2"}>Plan 2</MenuItem>
         </Select>
-        <div className="flex flex-col md:flex-wrap gap-4 w-full md:h-140 py-10 px-4 md:overflow-scroll">
+        <div className="flex flex-col md:flex-wrap gap-4 w-full h-fit md:h-140 py-10 px-4 md:overflow-scroll">
           {plan.days.map((dayPlan) => {
             return <DayCard dayPlan={dayPlan} key={dayPlan.date.toString()} />;
           })}

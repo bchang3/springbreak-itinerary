@@ -12,7 +12,7 @@ export default function DayCard({ dayPlan }: DayCardProps) {
   const [isFlipped, setIsFlipped] = useState(false);
   return (
     <div
-      className="w-full md:w-100 h-fit md:h-120 hover:scale-103 transition-all perspective cursor-pointer"
+      className="w-full md:w-100 h-120 hover:scale-103 transition-all perspective cursor-pointer"
       onClick={() => setIsFlipped((prev) => !prev)}
     >
       <motion.div
@@ -21,7 +21,7 @@ export default function DayCard({ dayPlan }: DayCardProps) {
         transition={{ duration: 0.25, ease: "easeInOut" }}
         style={{ transformStyle: "preserve-3d" }}
       >
-        <div className="absolute inset-0 backface-hidden flex flex-col flex-1 gap-2 w-full  border p-4 rounded-2xl h-full ">
+        <div className="inset-0 backface-hidden flex flex-col flex-1 gap-2 w-full  border p-4 rounded-2xl h-full ">
           <div className="flex flex-row justify-between w-full items-center">
             <div>
               <p className="font-bold text-xl font-cinzel ">
