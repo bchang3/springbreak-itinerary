@@ -6,8 +6,8 @@ import MenuItem from "@mui/material/MenuItem";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 
 export default function Home() {
-  const [plan_name, setPlanName] = useState<string>("v1");
-  const [plan, setPlan] = useState<Plan>(plan_v1);
+  const [plan_name, setPlanName] = useState<string>("v2");
+  const [plan, setPlan] = useState<Plan>(plan_v2);
 
   const handleChange = (event: SelectChangeEvent) => {
     setPlanName(event.target.value);
