@@ -60,7 +60,7 @@ const gothicQuarter: CityEvent = {
   title: "Gothic Quarter",
   city: "Barcelona",
   imageLink:
-    "https://www.througheternity.com/upload/CONF83/20220223/barcelona_gothic_quarter_tour_3_1_-tSa-1200X630.png",
+    "https://ginaonaplane.com/wp-content/uploads/2024/01/BarcaAboutMe.webp",
   type: "sightseeing",
   description:
     "Wander the maze of narrow streets in the historic Gothic Quarter, where medieval buildings hide lively plazas. Street performers, hidden cafes, and timeless architecture make every turn feel like discovery. It’s perfect for a relaxed afternoon of exploring.",
@@ -69,7 +69,7 @@ const placaReial: CityEvent = {
   title: "Plaça Reial",
   city: "Barcelona",
   imageLink:
-    "https://www.bcn.travel/wp-content/uploads/Royal-Plaza-Barcelona.jpg",
+    "https://live.staticflickr.com/4255/35011745731_049c5e0be6_b.jpg",
   type: "nightlife",
   description:
     "This lively square near La Rambla is lined with palm trees, historic lampposts, and buzzing bars. It’s a popular spot to grab drinks, people-watch, and soak up Barcelona’s vibrant street life. Evening energy here sets the tone for a great night out.",
@@ -78,7 +78,7 @@ const costaBrava: CityEvent = {
   title: "Costa Brava",
   city: "Barcelona",
   imageLink:
-    "https://www.spain.info/export/sites/segtur/.content/imagenes/cabeceras-grandes/cataluna/palafrugell-girona-s144973225.jpg",
+    "https://www.aparthotelcangallart.com/assets/cache/uploads/entorn/1920x1036/costa-brava-playas-1689155052.jpeg",
   type: "nature",
   description:
     "Just north of Barcelona, Costa Brava offers dramatic cliffs, hidden coves, and crystal-clear waters. Perfect for a day trip, you can hike scenic coastal trails or relax in charming seaside towns. The landscape feels like a breath of fresh Mediterranean air.",
@@ -134,7 +134,7 @@ const montserrat: CityEvent = {
   title: "Montserrat & Mountain Biking",
   city: "Barcelona",
   imageLink:
-    "https://www.spain.info/.content/imagenes/cabeceras-grandes/cataluna/monasterio_montserrat_s_628801775.jpg",
+    "https://www.annum-munir.com/hubfs/Images/Adventure/Montserrat/muslim-travel-guide-Montserrat-day-trip-Spain.jpg",
   type: "nature",
   description:
     "Take a day trip to Montserrat for dramatic mountain scenery and spiritual atmosphere. The rugged terrain around the monastery is ideal for mountain biking and outdoor adventure. Trails range from easy to challenging, all with unforgettable views.",
@@ -308,7 +308,7 @@ const goldMadrid: CityEvent = {
 const madridBikeTour: CityEvent = {
   title: "Madrid Bike Tour",
   city: "Madrid",
-  imageLink: "https://www.trixi.com/storage/2015/01/bike_tour_madrid_0010.jpg",
+  imageLink: "https://madrid.bikespain.com/wp-content/uploads/2018/03/bike-tours-madrid-city-tour-slider.jpg",
   type: "activities",
   description:
     "Bike tours are a fast way to see Madrid’s main neighborhoods and landmarks. Routes often pass Retiro, historic districts, and major plazas. It’s active without being exhausting.",
@@ -382,7 +382,7 @@ const puertaDelSol: CityEvent = {
   title: "Puerta del Sol",
   city: "Madrid",
   imageLink:
-    "https://www.spain.info/export/sites/segtur/.content/imagenes/cabeceras-grandes/madrid/puerta-del-sol-pano-s1276320760-c-ed-valery-bareta.jpg",
+    "https://images.trvl-media.com/place/6282935/70c31845-a88a-4887-99c0-efe8e0a0ef03.jpg",
   type: "sightseeing",
   description:
     "Puerta del Sol marks the symbolic center of Spain. Crowds come and go constantly, making it feel alive at all times. It’s a common meeting point before heading out.",
